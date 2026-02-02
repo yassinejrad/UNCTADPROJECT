@@ -1,0 +1,129 @@
+OldCode,ExplorationCodeOld,ExplorationCodeNew,IndicatorID,IndicatorLongName,SP_code,SP_subcode,Unit,Indicator_lower_value_boundary,Indicator_upper_value_boundary,Target,TargetDirection
+ISO3,ISO3,iso3,iso3,,,,,,,,
+Region.Name,Region.Name,group1,group1,,,,,,,,
+Income.group,Income.group,group3,group3,,,,,,,,
+Developed.Developing,Developed.Developing,group2,group2,,,,,,,,
+TimePeriod,TimePeriod,years,years,,,,,,,,
+,X1.1,X1.1,SDG_ECD_CHLD_LMPSL_F_M24T59,"Proportion of children aged 24-59 months of age who are developmentally on track in health, learning and psychosocial well-being, female",1,Imp,PERCENT,0,100,100,upperOrEqual
+,X1.2,X1.2,SDG_ECD_CHLD_LMPSL_M_M24T59,"Proportion of children aged 24-59 months of age who are developmentally on track in health, learning and psychosocial well-being, male",1,Imp,PERCENT,0,100,100,upperOrEqual
+,X1.3,X1.3,SDG_ECD_CHLD_LMPSL_T_M24T59,"Proportion of children aged 24-59 months of age who are developmentally on track in health, learning and psychosocial well-being, total",1,Imp,PERCENT,0,100,100,upperOrEqual
+,X1.4,X1.4,SDG_HIV_ADULT_N,"Number of people living with HIV receiving antiretroviral therapy (ART), adults",1,1_3,UNITS,0,,country specific,upperOrEqual
+,X1.5,X1.5,SDG_HIV_ADULT_PERC,"Percentage of people living with HIV receiving antiretroviral therapy (ART), adults",1,1_3,PERCENT,0,100,95,upperOrEqual
+,X1.6,X1.6,SDG_HIV_ALL_N,"Number of people living with HIV receiving antiretroviral therapy (ART), total",1,1_3,UNITS,0,,country specific,upperOrEqual
+,X1.7,X1.7,SDG_HIV_ALL_PERC,"Percentage of people living with HIV receiving antiretroviral therapy (ART), total",1,1_3,PERCENT,0,100,95,upperOrEqual
+,X1.8,X1.8,SDG_HIV_CHILD_N,"Number of people living with HIV receiving antiretroviral therapy (ART), children",1,1_3,UNITS,0,,country specific,upperOrEqual
+,X1.9,X1.9,SDG_HIV_CHILD_PERC,"Percentage of people living with HIV receiving antiretroviral therapy (ART), children",1,1_3,PERCENT,0,100,95,upperOrEqual
+,X1.10,X1.10,SDG_HIV_F_N,"Number of people living with HIV receiving antiretroviral therapy (ART), female",1,1_3,UNITS,0,,country specific,upperOrEqual
+,X1.11,X1.11,SDG_HIV_F_PERC,"Percentage of people living with HIV receiving antiretroviral therapy (ART), female",1,1_3,PERCENT,0,100,95,upperOrEqual
+,X1.12,X1.12,SDG_HIV_M_N,"Number of people living with HIV receiving antiretroviral therapy (ART), male",1,1_3,UNITS,0,,country specific,upperOrEqual
+,X1.13,X1.13,SDG_HIV_M_PERC,"Percentage of people living with HIV receiving antiretroviral therapy (ART), male",1,1_3,PERCENT,0,100,95,upperOrEqual
+,X1.14,X1.14,SDG_IM_DTP3_T_M12T23,Percentage of surviving infants who received the third dose of DTP-containing vaccine,1,1_2,PERCENT,0,100,90,upperOrEqual
+,X1.15,X1.15,SDG_IM_HPV_T_Y15,Percentage of females who received the last dose of human papillomavirus (HPV) vaccine per national schedule,1,1_2,PERCENT,0,100,90,upperOrEqual
+,X1.16,X1.16,SDG_MNCH_PNEUCARE_F_Y0T4,"Percentage of children (under age 5) with acute respiratory infection symptoms whom advice or treatment was sought from a health facility or provider, female",1,1_1,PERCENT,0,100,90,upperOrEqual
+,X1.17,X1.17,SDG_MNCH_PNEUCARE_M_Y0T4,"Percentage of children (under age 5) with acute respiratory infection symptoms whom advice or treatment was sought from a health facility or provider, male",1,1_1,PERCENT,0,100,90,upperOrEqual
+,X1.18,X1.18,SDG_MNCH_PNEUCARE_T_Y0T4,"Percentage of children (under age 5) with acute respiratory infection symptoms whom advice or treatment was sought from a health facility or provider, total",1,1_1,PERCENT,0,100,90,upperOrEqual
+,X1.19,X1.19,SDG_NT_ANE_WOM_15_49_MOD_T_Y15T49,Prevalence of anaemia in women aged 15-49 (Modeled Estimates),1,1_7,PERCENT,0,100,country specific,upperOrEqual
+,X1.20,X1.20,SDG_NT_BF_CBF_12_23_F_M12T23,"Percentage of children 12–23 months of age who were fed breast milk during the previous day, female",1,1_5,PERCENT,0,100,,
+,X1.21,X1.21,SDG_NT_BF_CBF_12_23_M_M12T23,"Percentage of children 12–23 months of age who were fed breast milk during the previous day, male",1,1_5,PERCENT,0,100,,
+,X1.22,X1.22,SDG_NT_BF_CBF_12_23_T_M12T23,"Percentage of children 12–23 months of age who were fed breast milk during the previous day, total",1,1_5,PERCENT,0,100,,
+,X1.23,X1.23,SDG_NT_BF_EBF_F_T,"Percentage of children born in the last 2 years who were ever breastfed, female",1,1_5,PERCENT,0,100,,
+,X1.24,X1.24,SDG_NT_BF_EBF_M_T,"Percentage of children born in the last 2 years who were ever breastfed, male",1,1_5,PERCENT,0,100,,
+,X1.25,X1.25,SDG_NT_BF_EBF_T_T,"Percentage of children born in the last 2 years who were ever breastfed, total",1,1_5,PERCENT,0,100,,
+,X1.26,X1.26,SDG_NT_BF_EIBF_F_T,"Percentage of children born in the last 2 years who were put to the breast within one hour of birth, female",1,1_5,PERCENT,0,100,,
+,X1.27,X1.27,SDG_NT_BF_EIBF_M_T,"Percentage of children born in the last 2 years who were put to the breast within one hour of birth, male",1,1_5,PERCENT,0,100,,
+,X1.28,X1.28,SDG_NT_BF_EIBF_T_T,"Percentage of children born in the last 2 years who were put to the breast within one hour of birth, total",1,1_5,PERCENT,0,100,,
+,X1.29,X1.29,SDG_NT_BF_EXBF_2D_F_T,"Percentage of children born in the last 24 months who were fed exclusively with breast milk for the first two days after birth, female",1,1_5,PERCENT,0,100,,
+,X1.30,X1.30,SDG_NT_BF_EXBF_2D_M_T,"Percentage of children born in the last 24 months who were fed exclusively with breast milk for the first two days after birth, male",1,1_5,PERCENT,0,100,,
+,X1.31,X1.31,SDG_NT_BF_EXBF_2D_T_T,"Percentage of children born in the last 24 months who were fed exclusively with breast milk for the first two days after birth, total",1,1_5,PERCENT,0,100,,
+,X1.32,X1.32,SDG_NT_BF_EXBF_F_M0T5,"Percentage of infants 0–5 months of age who are fed exclusively with breast milk, female",1,1_5,PERCENT,0,100,60,
+,X1.33,X1.33,SDG_NT_BF_EXBF_M_M0T5,"Percentage of infants 0–5 months of age who are fed exclusively with breast milk, male",1,1_5,PERCENT,0,100,60,
+,X1.34,X1.34,SDG_NT_BF_EXBF_T_M0T5,"Percentage of infants 0–5 months of age who are fed exclusively with breast milk, total",1,1_5,PERCENT,0,100,60,
+,X1.35,X1.35,SDG_NT_CF_ASF_F_M6T23,"Percentage of children 6–23 months of age who consumed egg and/or flesh food during the previous day, female",1,1_5,PERCENT,0,100,,
+,X1.36,X1.36,SDG_NT_CF_ASF_M_M6T23,"Percentage of children 6–23 months of age who consumed egg and/or flesh food during the previous day, male",1,1_5,PERCENT,0,100,,
+,X1.37,X1.37,SDG_NT_CF_ASF_T_M6T23,"Percentage of children 6–23 months of age who consumed egg and/or flesh food during the previous day, total",1,1_5,PERCENT,0,100,,
+,X1.38,X1.38,SDG_NT_CF_ISSSF_FL_F_M6T8,"Percentage of infants 6–8 months of age who consumed solid, semisolid or soft foods during the previous day, female",1,1_5,PERCENT,0,100,,
+,X1.39,X1.39,SDG_NT_CF_ISSSF_FL_M_M6T8,"Percentage of infants 6–8 months of age who consumed solid, semisolid or soft foods during the previous day, male",1,1_5,PERCENT,0,100,,
+,X1.40,X1.40,SDG_NT_CF_ISSSF_FL_T_M6T8,"Percentage of infants 6–8 months of age who consumed solid, semisolid or soft foods during the previous day, total",1,1_5,PERCENT,0,100,,
+,X1.41,X1.41,SDG_NT_CF_MAD_F_M6T23,"Percentage of 6-23 months old children who received a minimum acceptable diet, female",1,1_5,PERCENT,0,100,,
+,X1.42,X1.42,SDG_NT_CF_MAD_M_M6T23,"Percentage of 6-23 months old children who received a minimum acceptable diet, male",1,1_5,PERCENT,0,100,,
+,X1.43,X1.43,SDG_NT_CF_MAD_T_M6T23,"Percentage of 6-23 months old children who received a minimum acceptable diet, total",1,1_5,PERCENT,0,100,,
+,X1.44,X1.44,SDG_NT_CF_MDD_F_M6T23,"Percentage of 6-23 months old children who received minimum dietary diversity, female",1,1_5,PERCENT,0,100,,
+,X1.45,X1.45,SDG_NT_CF_MDD_M_M6T23,"Percentage of 6-23 months old children who received minimum dietary diversity, male",1,1_5,PERCENT,0,100,,
+,X1.46,X1.46,SDG_NT_CF_MDD_T_M6T23,"Percentage of 6-23 months old children who received minimum dietary diversity, total",1,1_5,PERCENT,0,100,,
+,X1.47,X1.47,SDG_NT_CF_MMF_F_M6T23,"Percentage of 6-23 months old children who received minimum meal frequency, female",1,1_5,PERCENT,0,100,,
+,X1.48,X1.48,SDG_NT_CF_MMF_M_M6T23,"Percentage of 6-23 months old children who received minimum meal frequency, male",1,1_5,PERCENT,0,100,,
+,X1.49,X1.49,SDG_NT_CF_MMF_T_M6T23,"Percentage of 6-23 months old children who received minimum meal frequency, total",1,1_5,PERCENT,0,100,,
+,X1.50,X1.50,SDG_NT_CF_ZEROFV_F_M6T23,"Percentage of children 6–23 months of age who did not consume any vegetables or fruits during the previous day, female",1,1_5,PERCENT,0,100,,
+,X1.51,X1.51,SDG_NT_CF_ZEROFV_M_M6T23,"Percentage of children 6–23 months of age who did not consume any vegetables or fruits during the previous day, male",1,1_5,PERCENT,0,100,,
+,X1.52,X1.52,SDG_NT_CF_ZEROFV_T_M6T23,"Percentage of children 6–23 months of age who did not consume any vegetables or fruits during the previous day, total",1,1_5,PERCENT,0,100,,
+,X1.53,X1.53,SDG_NT_DANT_BMI_L18_MOD_F_T,"Prevalence of underweight among adults, BMI < 18.5 (Age-standardized estimate), female",1,1_7,PERCENT,0,100,,
+,X1.54,X1.54,SDG_NT_DANT_BMI_L18_MOD_M_T,"Prevalence of underweight among adults, BMI < 18.5 (Age-standardized estimate), male",1,1_7,PERCENT,0,100,,
+,X1.55,X1.55,SDG_NT_DANT_BMI_L18_MOD_T_T,"Prevalence of underweight among adults, BMI < 18.5 (Age-standardized estimate), total",1,1_7,PERCENT,0,100,,
+,X1.56,X1.56,SDG_SH_DYN_IMRT_BOTHSEX_<1Y,"Infant mortality rate, total (deaths per 1,000 live births)",1,Imp,PER_1000_LIVE_BIRTHS,0,,12,lowerOrEqual
+,X1.57,X1.57,SDG_SH_DYN_IMRT_FEMALE_<1Y,"Infant mortality rate, female (deaths per 1,000 live births)",1,Imp,PER_1000_LIVE_BIRTHS,0,,12,lowerOrEqual
+,X1.58,X1.58,SDG_SH_DYN_IMRT_MALE_<1Y,"Infant mortality rate, male (deaths per 1,000 live births)",1,Imp,PER_1000_LIVE_BIRTHS,0,,12,lowerOrEqual
+,X1.59,X1.59,SDG_SH_DYN_IMRTN_BOTHSEX_<1Y,"Infant deaths, total (number)",1,Imp,UNITS,0,,country specific,lowerOrEqual
+,X1.60,X1.60,SDG_SH_DYN_IMRTN_FEMALE_<1Y,"Infant deaths, female (number)",1,Imp,UNITS,0,,country specific,lowerOrEqual
+,X1.61,X1.61,SDG_SH_DYN_IMRTN_MALE_<1Y,"Infant deaths, male (number)",1,Imp,UNITS,0,,country specific,lowerOrEqual
+,X1.62,X1.62,SDG_SH_DYN_MORT_BOTHSEX_<5Y,"Under-five mortality rate, total (deaths per 1,000 live births)",1,Imp,PER_1000_LIVE_BIRTHS,0,,25,lowerOrEqual
+,X1.63,X1.63,SDG_SH_DYN_MORT_FEMALE_<5Y,"Under-five mortality rate, female (deaths per 1,000 live births)",1,Imp,PER_1000_LIVE_BIRTHS,0,,25,lowerOrEqual
+,X1.64,X1.64,SDG_SH_DYN_MORT_MALE_<5Y,"Under-five mortality rate, male (deaths per 1,000 live births)",1,Imp,PER_1000_LIVE_BIRTHS,0,,25,lowerOrEqual
+,X1.65,X1.65,SDG_SH_DYN_MORTN_BOTHSEX_<5Y,"Under-five deaths, male (number)",1,Imp,UNITS,0,,country specific,lowerOrEqual
+,X1.66,X1.66,SDG_SH_DYN_MORTN_FEMALE_<5Y,"Under-five deaths, female (number)",1,Imp,UNITS,0,,country specific,lowerOrEqual
+,X1.67,X1.67,SDG_SH_DYN_MORTN_MALE_<5Y,"Under-five deaths, total (number)",1,Imp,UNITS,0,,country specific,lowerOrEqual
+,X1.68,X1.68,SDG_SH_H2O_SAFE_ALLAREA,"Proportion of population using safely managed drinking water services, all area (%)",1,1_9,PERCENT,0,100,100,lowerOrEqual
+,X1.69,X1.69,SDG_SH_H2O_SAFE_RURAL,"Proportion of population using safely managed drinking water services, rural (%)",1,1_9,PERCENT,0,100,100,lowerOrEqual
+,X1.70,X1.70,SDG_SH_H2O_SAFE_URBAN,"Proportion of population using safely managed drinking water services, urban (%)",1,1_9,PERCENT,0,100,100,lowerOrEqual
+,X1.71,X1.71,SDG_SH_SAN_HNDWSH_ALLAREA,"Proportion of population with basic handwashing facilities on premises, all area (%)",1,1_9,PERCENT,0,100,100,
+,X1.72,X1.72,SDG_SH_SAN_HNDWSH_RURAL,"Proportion of population with basic handwashing facilities on premises, rural (%)",1,1_9,PERCENT,0,100,100,
+,X1.73,X1.73,SDG_SH_SAN_HNDWSH_URBAN,"Proportion of population with basic handwashing facilities on premises, urban (%)",1,1_9,PERCENT,0,100,100,
+,X1.74,X1.74,SDG_SH_SAN_SAFE_ALLAREA,"Proportion of population using safely managed sanitation services, all area (%)",1,1_9,PERCENT,0,100,100,
+,X1.75,X1.75,SDG_SH_SAN_SAFE_RURAL,"Proportion of population using safely managed sanitation services, rural (%)",1,1_9,PERCENT,0,100,100,
+,X1.76,X1.76,SDG_SH_SAN_SAFE_URBAN,"Proportion of population using safely managed sanitation services, urban (%)",1,1_9,PERCENT,0,100,100,
+,X1.77,X1.77,SDG_SH_STA_BRTC,Proportion of births attended by skilled health personnel (%),1,1_1,PERCENT,0,100,90,upperOrEqual
+,X1.78,X1.78,SDG_SH_STA_STNT_BOTHSEX_<5Y,"Proportion of children moderately or severely stunted, total (%)",1,Imp,PERCENT,0,100,3,lowerOrEqual
+,X1.79,X1.79,SDG_SH_STA_STNT_FEMALE_<5Y,"Proportion of children moderately or severely stunted, female (%)",1,Imp,PERCENT,0,100,3,lowerOrEqual
+,X1.80,X1.80,SDG_SH_STA_STNT_MALE_<5Y,"Proportion of children moderately or severely stunted, male (%)",1,Imp,PERCENT,0,100,3,lowerOrEqual
+,X1.81,X1.81,SDG_SH_STA_STNTN_BOTHSEX_<5Y,"Children moderately or severely stunted, total (thousands)",1,Imp,THOUSANDS,0,,country specific,lowerOrEqual
+,X1.82,X1.82,SDG_SH_STA_STNTN_FEMALE_<5Y,"Children moderately or severely stunted, female (thousands)",1,Imp,THOUSANDS,0,,country specific,lowerOrEqual
+,X1.83,X1.83,SDG_SH_STA_STNTN_MALE_<5Y,"Children moderately or severely stunted, male (thousands)",1,Imp,THOUSANDS,0,,country specific,lowerOrEqual
+,X1.84,X1.84,SDG_SH_STA_WAST_<5Y,Proportion of children moderately or severely wasted (%),1,1_6,PERCENT,0,100,5,lowerOrEqual
+,X1.85,X1.85,SDG_SH_STA_WASTN_<5Y,Children moderately or severely wasted (thousands),1,1_6,THOUSANDS,0,,NA,lowerOrEqual
+GDP.nominal..USD.million.,GDP.nominal..USD.million.,CV_GDP,CV_GDP,"Gross Domestic Product (GDP),  current US$",,,UNITS,,,,lowerOrEqual
+Control.of.Corruption..Percentile.Rank,Control.of.Corruption..Percentile.Rank,CV_CC,CV_CC.PER.RNK,"Control of Corruption, percentile rank",,,SCORE,,,,lowerOrEqual
+Government.Effectiveness..Percentile.Rank,Government.Effectiveness..Percentile.Rank,CV_GE,CV_GE.PER.RNK,"Government Effectiveness, percentile rank",,,SCORE,,,,
+TDS.per.GDP,TDS.per.GDP,CV_TDS_GDP,CV_DT.TDS.DECT.CD_GDP,Debt service on external debt (TDS) (% of GDP),,,PERCENT,,,,
+,CV_TDS_PC,CV_TDS_PC,CV_DT.TDS.DECT.CD_PC,"Debt service on external debt (TDS), per capita",,,UNITS,,,,
+,CV_TDS,CV_TDS,CV_DT.TDS.DECT.CD,"Debt service on external debt, total (TDS, current US$)",,,UNITS,,,,
+Net.ODA.received.per.capita..current.US..,Net.ODA.received.per.capita..current.US..,CV_ODA_PC,CV_DT.ODA.ODAT.PC.ZS,Net ODA received per capita (current US$),,,UNITS,,,,
+Foreign.direct.investment..net.inflows....of.GDP.,Foreign.direct.investment..net.inflows....of.GDP.,CV_FDI_GDP,CV_FDI_GDP,"Foreign direct investment, net inflows (% of GDP)",,,PERCENT,,,,
+,CV_FDI_PC,CV_FDI_PC,CV_FDI_PC,"Foreign direct investment, net inflows, per capita",,,UNITS,,,,
+,CV_FDI,CV_FDI,CV_FDI,"Foreign direct investment, net inflows (current US$)",,,UNITS,,,,
+Tax.revenue....of.GDP.,Tax.revenue....of.GDP.,CV_TAX_GDP,CV_GC.TAX.TOTL.GD.ZS,Tax revenue (% of GDP),,,PERCENT,,,,
+Pop..million.,Pop..million.,CV_POP,CV_POP,Population,,,UNITS,,,,
+Total.function_per_capita,Total.function_per_capita,GVT_TOTAL_PC,GVT_TOTAL_PC,"Total government expenditures, per capita (current US$)",,,UNITS,,,,
+Economic.affairs_per_capita,Economic.affairs_per_capita,GVT_ECON_AFFAIRS_PC,GVT_ECON_AFFAIRS_PC,"Government expenditures on economic affairs, per capita (current US$)",,,UNITS,,,,
+Agriculture..forestry..fishing.and.hunting_per_capita,Agriculture..forestry..fishing.and.hunting_per_capita,GVT_AGRI_FORESTRY_PC,GVT_AGRI_FORESTRY_PC,"Government expenditures on agriculture, forestry, fishing and hunting, per capita (current US$)",,,UNITS,,,,
+Fuel.and.energy_per_capita,Fuel.and.energy_per_capita,GVT_ENERGY_PC,GVT_ENERGY_PC,"Government expenditures on fuel and energy, per capita (current US$)",,,UNITS,,,,
+Mining..manufacturing.and.construction_per_capita,Mining..manufacturing.and.construction_per_capita,GVT_INDUSTRY_PC,GVT_INDUSTRY_PC,"Government expenditures on mining, manufacturing and construction, per capita (current US$)",,,UNITS,,,,
+Transport_per_capita,Transport_per_capita,GVT_TRANSPORT_PC,GVT_TRANSPORT_PC,"Government expenditures on transport, per capita (current US$)",,,UNITS,,,,
+Communication_per_capita,Communication_per_capita,GVT_COMMUNICATION_PC,GVT_COMMUNICATION_PC,"Government expenditures on communication, per capita (current US$)",,,UNITS,,,,
+Environment.protection_per_capita,Environment.protection_per_capita,GVT_ENV_PROTECTION_PC,GVT_ENV_PROTECTION_PC,"Government expenditures on environmental protection, per capita (current US$)",,,UNITS,,,,
+Housing.and.community.amenities_per_capita,Housing.and.community.amenities_per_capita,GVT_HOUSING_AMEN_PC,GVT_HOUSING_AMEN_PC,"Government expenditures on housing and community amenities, per capita (current US$)",,,UNITS,,,,
+Health_per_capita,Health_per_capita,GVT_HEALTH_PC,GVT_HEALTH_PC,"Government expenditures on health, per capita (current US$)",,,UNITS,,,,
+Education_per_capita,Education_per_capita,GVT_EDUCATION_PC,GVT_EDUCATION_PC,"Government expenditures on education, per capita (current US$)",,,UNITS,,,,
+Social.protection_per_capita,Social.protection_per_capita,GVT_SOCIAL_PROTECTION_PC,GVT_SOCIAL_PROTECTION_PC,"Government expenditures on social protection, per capita (current US$)",,,UNITS,,,,
+Special.others_per_capita,Special.others_per_capita,GVT_OTHER_PC,GVT_OTHER_PC,"Government expenditures on other functions, per capita (current US$)",,,UNITS,,,,
+,GVT_TOTAL,GVT_TOTAL,GVT_TOTAL,Total government expenditures (current US$),,,UNITS,,,,
+,GVT_ECON_AFFAIRS,GVT_ECON_AFFAIRS,GVT_ECON_AFFAIRS,Government expenditures on economic affairs (current US$),,,UNITS,,,,
+,GVT_AGRI_FORESTRY,GVT_AGRI_FORESTRY,GVT_AGRI_FORESTRY,"Government expenditures on agriculture, forestry, fishing and hunting (current US$)",,,UNITS,,,,
+,GVT_ENERGY,GVT_ENERGY,GVT_ENERGY,Government expenditures on fuel and energy (current US$),,,UNITS,,,,
+,GVT_INDUSTRY,GVT_INDUSTRY,GVT_INDUSTRY,"Government expenditures on mining, manufacturing and construction (current US$)",,,UNITS,,,,
+,GVT_TRANSPORT,GVT_TRANSPORT,GVT_TRANSPORT,Government expenditures on transport (current US$),,,UNITS,,,,
+,GVT_COMMUNICATION,GVT_COMMUNICATION,GVT_COMMUNICATION,Government expenditures on communication (current US$),,,UNITS,,,,
+,GVT_ENV_PROTECTION,GVT_ENV_PROTECTION,GVT_ENV_PROTECTION,Government expenditures on environmental protection (current US$),,,UNITS,,,,
+,GVT_HOUSING_AMEN,GVT_HOUSING_AMEN,GVT_HOUSING_AMEN,Government expenditures on housing and community amenities (current US$),,,UNITS,,,,
+,GVT_HEALTH,GVT_HEALTH,GVT_HEALTH,Government expenditures on health (current US$),,,UNITS,,,,
+,GVT_EDUCATION,GVT_EDUCATION,GVT_EDUCATION,Government expenditures on education (current US$),,,UNITS,,,,
+,GVT_SOCIAL_PROTECTION,GVT_SOCIAL_PROTECTION,GVT_SOCIAL_PROTECTION,Government expenditures on social protection (current US$),,,UNITS,,,,
+,GVT_OTHER,GVT_OTHER,GVT_OTHER,Government expenditures on other functions (current US$),,,UNITS,,,,

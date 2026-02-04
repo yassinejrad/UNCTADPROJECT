@@ -9,7 +9,6 @@ click==8.3.0
 colorama==0.4.6
 et_xmlfile==2.0.0
 formulaic==1.2.1
-fronpy @ git+https://github.com/AlexStead/FronPy.git@5875bbec34d4263d5da327097d331e37708475b2
 gitdb==4.0.12
 GitPython==3.1.45
 idna==3.10
@@ -26,6 +25,7 @@ packaging==25.0
 pandas==2.3.3
 patsy==1.0.2
 pillow==11.3.0
+plotly==6.5.2
 protobuf==6.32.1
 pyarrow==21.0.0
 pydeck==0.9.1

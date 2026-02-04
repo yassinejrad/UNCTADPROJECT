@@ -3,6 +3,8 @@ import pandas as pd
 from pathlib import Path
 import re
 
+
+
 from config import (
     DATA_DIR,
     INDICATOR_METADATA_FILE,
@@ -21,18 +23,42 @@ st.set_page_config(
 
 st.title(APP_TITLE)
 
+
+
 # =====================================================
 # Load SP1 metadata
 # =====================================================
 
 @st.cache_data
 def load_sp1_metadata():
-    return pd.read_csv(
-        INDICATOR_METADATA_FILE,
-        encoding="cp1252"
+    encodings_to_try = [
+        "cp1252",
+        "utf-8",
+        "latin1",
+        "ISO-8859-1"
+    ]
+
+    last_error = None
+
+    for enc in encodings_to_try:
+        try:
+            return pd.read_csv(
+                INDICATOR_METADATA_FILE,
+                encoding=enc
+            )
+        except Exception as e:
+            last_error = e
+
+    raise RuntimeError(
+        f"Failed to load metadata file. Last error: {last_error}"
     )
 
-sp1_metadata = load_sp1_metadata()
+try:
+    sp1_metadata = load_sp1_metadata()
+except Exception as e:
+    st.error(f"❌ {e}")
+    st.stop()
+
 
 # =====================================================
 # Session state initialization

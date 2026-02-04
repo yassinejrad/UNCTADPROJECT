@@ -10,6 +10,7 @@ import pandas as pd
 from optimization import optimize_country_year as optimize_no_gdp
 from optimization_gdp import optimize_country_year as optimize_with_gdp
 from data_loader import load_indicator_metadata
+from optimization_minmax import optimize_country_year_minimax as optimize_with_minmax
 
 from config import (
     DATA_DIR,
@@ -22,7 +23,7 @@ from config import (
 # =====================================================
 
 if "filtered_data" not in st.session_state or st.session_state.filtered_data is None:
-    st.error("❌ No filtered data found. Please complete Step 1 & 2 first.")
+    st.error("❌ No filtered data found. Please complete Step 1 ")
     st.stop()
 
 st.subheader("Step 3 — Optimization")
@@ -56,19 +57,26 @@ country_name_to_iso3 = dict(
 # OPTIMIZATION MODE
 # =====================================================
 
-opt_mode = st.radio(
+OPT_MODES = {
+    "Pure cost minimization (no GDP constraint)": "no_gdp",
+    "Cost minimization with GDP constraint": "with_gdp",
+    "SDG-balanced optimization (maximize worst indicator)": "sdg_balanced"
+}
+
+opt_label = st.radio(
     "Select optimization mode",
-    [
-        "Without GDP constraint (pure cost minimization)",
-        "With GDP constraint"
-    ]
+    options=list(OPT_MODES.keys())
 )
 
-optimize_fn = (
-    optimize_with_gdp
-    if "GDP" in opt_mode
-    else optimize_no_gdp
-)
+opt_mode = OPT_MODES[opt_label]
+
+if opt_mode == "with_gdp":
+    optimize_fn = optimize_with_gdp
+elif opt_mode == "sdg_balanced":
+    optimize_fn = optimize_with_minmax
+else:
+    optimize_fn = optimize_no_gdp
+
 
 # =====================================================
 # TIME CONFIGURATION
@@ -142,6 +150,9 @@ if stop_clicked:
 # RUN OPTIMIZATION
 # =====================================================
 
+# STEP 3 — OPTIMIZATION 
+
+
 if run_clicked:
 
     st.session_state.stop_optimization = False
@@ -155,6 +166,8 @@ if run_clicked:
     start_time = time.time()
 
     for iso3 in countries:
+
+        previous_expenditures = None   
 
         country_label = (
             country_map
@@ -178,20 +191,20 @@ if run_clicked:
                 cv_year=year + 1,
                 data_file=TMP_DATA_FILE,
                 coef_dir=str(COEF_DIR),
-                metadata_file=str(INDICATOR_METADATA_FILE)
+                metadata_file=str(INDICATOR_METADATA_FILE),
+                previous_expenditures=previous_expenditures  
             )
+
+            previous_expenditures = result["expenditures"]  
 
             mask = (df["iso3"] == iso3) & (df["years"] == year + 1)
 
-            # Write expenditures
             for k, v in result["expenditures"].items():
                 df.loc[mask, k] = v
 
-            # Write indicators
             for k, v in result["indicators"].items():
                 df.loc[mask, k] = v
 
-            # ---- Progress & ETA
             step_counter += 1
             progress_bar.progress(step_counter / total_steps)
 
@@ -204,16 +217,16 @@ if run_clicked:
                 f"Estimated remaining: {remaining/60:.1f} min"
             )
 
-        if st.session_state.stop_optimization:
-            break
-
         log_box.success(f"✅ Completed for {country_label}")
+
+    st.success("🎉 Optimization completed")
 
     # =====================================================
     # EXPORT RESULT
     # =====================================================
 
-    st.success("🎉 Optimization completed")
+    output_path = DATA_DIR / "optimized_output.csv"
+    df.to_csv(output_path, index=False)
 
     st.session_state.opt_df = df.copy()
 

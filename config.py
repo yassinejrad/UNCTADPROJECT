@@ -4,7 +4,7 @@ from pathlib import Path
 # PROJECT ROOT
 # =====================================================
 
-# Racine du projet (à adapter UNE SEULE FOIS)
+# Racine du projet 
 PROJECT_ROOT = Path(__file__).resolve().parent
 
 # =====================================================

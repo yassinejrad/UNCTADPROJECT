@@ -1,167 +1,325 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import plotly.graph_objects as go
 
 from config import INDICATOR_METADATA_FILE
 
-st.set_page_config(
-    page_title="Optimization Results",
-    layout="wide"
-)
+# =====================================================
+# PAGE CONFIG
+# =====================================================
 
+st.set_page_config(page_title="Optimization Results", layout="wide")
 st.title("📊 Optimization Results & Diagnostics")
 
 # =====================================================
-# SAFETY CHECKS
+# LOAD METADATA (ROBUST ENCODING)
 # =====================================================
 
-required_keys = [
-    "opt_df",
-    "indicator_meta",
-    "optimized_countries",
-    "optimized_years",
-    "run_mode"
-]
+def load_sp1_metadata():
+    for enc in ["cp1252", "utf-8", "latin1", "ISO-8859-1"]:
+        try:
+            return pd.read_csv(INDICATOR_METADATA_FILE, encoding=enc)
+        except Exception:
+            pass
+    raise RuntimeError("Failed to load metadata file")
 
-for k in required_keys:
-    if k not in st.session_state:
-        st.warning("⚠ Please run the optimization first.")
-        st.stop()
-
-df = st.session_state.opt_df.copy()
-indicator_meta = st.session_state.indicator_meta
-countries_run = st.session_state.optimized_countries
-years_run = st.session_state.optimized_years
-run_mode = st.session_state.run_mode
+sp1_metadata = load_sp1_metadata()
 
 # =====================================================
-# HEADER INFO
+# CLEAN METADATA
 # =====================================================
 
-st.info(
-    f"**Run mode:** {run_mode}  \n"
-    f"**Countries optimized:** {len(countries_run)}  \n"
-    f"**Years optimized:** {min(years_run)} → {max(years_run)}"
+for col in [
+    "Target",
+    "Indicator_lower_value_boundary",
+    "Indicator_upper_value_boundary"
+]:
+    sp1_metadata[col] = pd.to_numeric(sp1_metadata[col], errors="coerce")
+
+indicator_meta = (
+    sp1_metadata
+    .set_index("ExplorationCodeNew")
+    .to_dict(orient="index")
 )
 
 # =====================================================
-# FILTER TO OPTIMIZED DATA ONLY
+# FILE UPLOAD
 # =====================================================
 
-df = df[
-    (df["iso3"].isin(countries_run)) &
-    (df["years"].isin(years_run))
-].copy()
+uploaded_file = st.file_uploader("📂 Upload dataset", type=["csv"])
+if uploaded_file is None:
+    st.stop()
+
+df = pd.read_csv(uploaded_file)
 
 # =====================================================
-# COUNTRY SELECTION (DISPLAY ONLY)
+# EXPENDITURE COLUMNS 
 # =====================================================
 
-country_map = (
-    df[["iso3", "Country_name"]]
-    .drop_duplicates()
-    .sort_values("Country_name")
+exp_cols = [c for c in df.columns if c.startswith("GVT_")]
+
+# =====================================================
+# COUNTRY SELECTION
+# =====================================================
+
+country = st.selectbox(
+    "🌍 Country",
+    sorted(df["Country_name"].unique())
 )
 
-selected_country = st.selectbox(
-    "🌍 Select country",
-    country_map["Country_name"].unique()
+df_c = df[df["Country_name"] == country]
+
+# =====================================================
+# YEAR SELECTION (DEFAULT = 2022)
+# =====================================================
+
+years = sorted(df_c["years"].unique())
+default_year = 2022 if 2022 in years else years[-1]
+
+year = st.selectbox(
+    "🗓 Year",
+    years,
+    index=years.index(default_year)
 )
 
-iso3 = country_map.loc[
-    country_map["Country_name"] == selected_country,
-    "iso3"
-].iloc[0]
-
-df_c = df[df["iso3"] == iso3].copy()
+df_y = df_c[df_c["years"] == year]
 
 # =====================================================
-# 1️⃣ TOTAL EXPENDITURE (OPTIMIZED YEARS ONLY)
+# 1️⃣ TOTAL EXPENDITURE 
 # =====================================================
 
-st.subheader("📈 Total Expenditure (Optimized Years)")
+st.subheader("📈 Total Expenditure (All Years)")
 
-exp_cols = [c for c in df_c.columns if c.startswith("GVT_")]
+exp_type_total = st.radio(
+    "Select expenditure type",
+    ["Absolute expenditure", "Per capita expenditure"],
+    horizontal=True,
+    index=1,
+    key="total_exp_type"
+)
+
+if exp_type_total == "Per capita expenditure":
+    exp_cols_total = [
+        c for c in exp_cols if c.endswith("_PC") and c != "GVT_TOTAL_PC"
+    ]
+else:
+    exp_cols_total = [
+        c for c in exp_cols if not c.endswith("_PC") and c != "GVT_TOTAL"
+    ]
 
 df_total = (
-    df_c
-    .groupby("years")[exp_cols]
+    df_c.groupby("years")[exp_cols_total]
     .sum()
-    .sum(axis=1)
-    .reset_index(name="Total Expenditure")
-    .set_index("years")
+    .reset_index()
 )
 
-st.line_chart(df_total)
+df_total["Total"] = df_total[exp_cols_total].sum(axis=1)
+
+
+df_total["HasNegative"] = (df_total[exp_cols_total] < 0).any(axis=1)
+
+marker_colors = np.where(
+    df_total["HasNegative"],
+    "#d62728",
+    "#1f77b4"
+)
+
+fig_total = go.Figure()
+
+fig_total.add_trace(
+    go.Scatter(
+        x=df_total["years"],
+        y=df_total["Total"],
+        mode="lines",
+        line=dict(color="#1f77b4", width=3),
+        showlegend=False
+    )
+)
+
+fig_total.add_trace(
+    go.Scatter(
+        x=df_total["years"],
+        y=df_total["Total"],
+        mode="markers",
+        marker=dict(size=8, color=marker_colors),
+        name="Total expenditure"
+    )
+)
+
+fig_total.update_layout(
+    xaxis_title="Year",
+    yaxis_title="Total expenditure",
+    height=380
+)
+
+st.plotly_chart(fig_total, use_container_width=True)
 
 # =====================================================
-# 2️⃣ EXPENDITURE REALLOCATION (LAST YEAR)
+# 2️⃣ OPTIMIZED EXPENDITURE ALLOCATION 
 # =====================================================
 
-st.subheader("📊 Expenditure Reallocation (Last Optimized Year)")
+st.subheader("📊 Optimized Expenditure Allocation")
 
-latest_year = max(years_run)
-prev_year = latest_year - 1
+exp_type_alloc = st.radio(
+    "Select expenditure type",
+    ["Absolute expenditure", "Per capita expenditure"],
+    horizontal=True,
+    index=1,
+    key="alloc_exp_type"
+)
 
-df_prev = df_c[df_c["years"] == prev_year]
-df_curr = df_c[df_c["years"] == latest_year]
-
-if not df_prev.empty and not df_curr.empty:
-
-    exp_compare = pd.DataFrame({
-        "Historical": df_prev[exp_cols].iloc[0],
-        "Optimized": df_curr[exp_cols].iloc[0]
-    })
-
-    exp_compare["Delta"] = exp_compare["Optimized"] - exp_compare["Historical"]
-    exp_compare = exp_compare.sort_values("Optimized", ascending=False).head(10)
-
-    st.bar_chart(exp_compare[["Historical", "Optimized"]])
-
+if exp_type_alloc == "Per capita expenditure":
+    exp_cols_alloc = [
+        c for c in exp_cols if c.endswith("_PC") and c != "GVT_TOTAL_PC"
+    ]
 else:
-    st.info("Not enough data to compare expenditures.")
+    exp_cols_alloc = [
+        c for c in exp_cols if not c.endswith("_PC") and c != "GVT_TOTAL"
+    ]
+
+values = df_y[exp_cols_alloc].iloc[0]
+
+pos_mask = values > 0
+neg_mask = values < 0
+
+fig_alloc = go.Figure()
+
+fig_alloc.add_bar(
+    x=values.index[pos_mask],
+    y=values[pos_mask],
+    marker_color="#1f77b4",
+    name="Positive expenditure"
+)
+
+fig_alloc.add_trace(
+    go.Scatter(
+        x=values.index[neg_mask],
+        y=values[neg_mask],
+        mode="markers",
+        marker=dict(
+            symbol="triangle-down",
+            size=14,
+            color="#d62728"
+        ),
+        name="Negative expenditure"
+    )
+)
+
+fig_alloc.add_hline(y=0, line_width=2, line_color="black")
+
+fig_alloc.update_layout(
+    xaxis_title="Expenditure category",
+    yaxis_title="Value",
+    height=450
+)
+
+st.plotly_chart(fig_alloc, use_container_width=True)
 
 # =====================================================
-# 3️⃣ INDICATORS VS TARGETS (OPTIMIZED ONLY)
+# 3️⃣ INDICATORS VS TARGET
 # =====================================================
 
-st.subheader("🎯 Indicators vs Targets (Last Optimized Year)")
+st.subheader("🎯 Optimized Value vs Target")
 
 indicator_cols = [
-    c for c in df_c.columns
-    if c.startswith("X") and c in indicator_meta
+    c for c in df_y.columns if c.startswith("X") and c in indicator_meta
 ]
 
-df_ind = (
-    df_c[df_c["years"] == latest_year][indicator_cols]
-    .T
-    .rename(columns={df_c.index.max(): "Optimized"})
+df_plot = df_y[indicator_cols].T
+df_plot.columns = ["Value"]
+
+df_plot["Target"] = df_plot.index.map(lambda x: indicator_meta[x]["Target"])
+df_plot["Direction"] = df_plot.index.map(lambda x: indicator_meta[x]["TargetDirection"])
+df_plot["LB_meta"] = df_plot.index.map(lambda x: indicator_meta[x]["Indicator_lower_value_boundary"])
+df_plot["UB_meta"] = df_plot.index.map(lambda x: indicator_meta[x]["Indicator_upper_value_boundary"])
+df_plot["Indicator"] = df_plot.index
+
+fig = go.Figure()
+
+# Bounds
+for _, r in df_plot.iterrows():
+    if r["Direction"] == "lowerOrEqual":
+        lb, ub = r["LB_meta"], r["Target"]
+    elif r["Direction"] == "upperOrEqual":
+        lb, ub = r["Target"], r["UB_meta"]
+    else:
+        continue
+
+    if pd.notna(lb) and pd.notna(ub):
+        fig.add_trace(
+            go.Scatter(
+                x=[lb, ub],
+                y=[r["Indicator"], r["Indicator"]],
+                mode="lines",
+                line=dict(color="rgba(180,180,180,0.5)", width=12),
+                hoverinfo="skip",
+                showlegend=False
+            )
+        )
+
+# Gap lines
+for _, r in df_plot.iterrows():
+    fig.add_trace(
+        go.Scatter(
+            x=[r["Target"], r["Value"]],
+            y=[r["Indicator"], r["Indicator"]],
+            mode="lines",
+            line=dict(color="#7f7f7f", width=2),
+            showlegend=False
+        )
+    )
+
+# Target & Value
+fig.add_trace(
+    go.Scatter(
+        x=df_plot["Target"],
+        y=df_plot["Indicator"],
+        mode="markers",
+        marker=dict(symbol="circle-open", size=10, line=dict(width=2)),
+        name="Target"
+    )
 )
 
-df_ind["Target"] = df_ind.index.map(
-    lambda x: indicator_meta.get(x, {}).get("target", np.nan)
+fig.add_trace(
+    go.Scatter(
+        x=df_plot["Value"],
+        y=df_plot["Indicator"],
+        mode="markers",
+        marker=dict(size=10, color="#2ca02c"),
+        name="Optimized value"
+    )
 )
 
-st.bar_chart(df_ind[["Optimized", "Target"]])
+fig.update_layout(
+    xaxis_title="Indicator value",
+    yaxis_title="",
+    height=600,
+    margin=dict(l=120),
+    legend=dict(orientation="h", y=1.05)
+)
+
+st.plotly_chart(fig, use_container_width=True)
 
 # =====================================================
-# 4️⃣ INDICATOR CONSTRAINT STATUS
+# 4️⃣ CONSTRAINT STATUS TABLE
 # =====================================================
-
-st.subheader("🚦 Indicator Constraint Status")
 
 rows = []
 
 for ind in indicator_cols:
-    value = df_c.loc[df_c["years"] == latest_year, ind].values[0]
-    meta = indicator_meta.get(ind, {})
+    meta = indicator_meta[ind]
+    value = float(df_y[ind].iloc[0])
+    target = meta["Target"]
 
-    lb = meta.get("lb")
-    ub = meta.get("ub")
+    if meta["TargetDirection"] == "lowerOrEqual":
+        lb, ub = meta["Indicator_lower_value_boundary"], target
+    else:
+        lb, ub = target, meta["Indicator_upper_value_boundary"]
 
-    if lb is not None and value < lb:
+    if pd.notna(lb) and value < lb:
         status = "❌ BELOW LB"
-    elif ub is not None and value > ub:
+    elif pd.notna(ub) and value > ub:
         status = "❌ ABOVE UB"
     else:
         status = "✅ OK"
@@ -169,44 +327,11 @@ for ind in indicator_cols:
     rows.append({
         "Indicator": ind,
         "Value": value,
+        "Target": target,
         "LB": lb,
         "UB": ub,
         "Status": status
     })
 
-df_status = pd.DataFrame(rows)
+st.dataframe(pd.DataFrame(rows), use_container_width=True)
 
-st.dataframe(df_status, use_container_width=True)
-
-# =====================================================
-# 5️⃣ MULTI-COUNTRY SUMMARY (IF APPLICABLE)
-# =====================================================
-
-if run_mode == "All countries":
-
-    st.subheader("🌍 Cross-Country Summary (Last Optimized Year)")
-
-    df_multi = (
-        df[df["years"] == latest_year]
-        .groupby("Country_name")[exp_cols]
-        .sum()
-        .sum(axis=1)
-        .reset_index(name="Total Expenditure")
-        .sort_values("Total Expenditure", ascending=False)
-    )
-
-    st.bar_chart(
-        df_multi.set_index("Country_name")
-    )
-
-# =====================================================
-# DOWNLOAD
-# =====================================================
-
-st.subheader("⬇ Download Optimized Results")
-
-st.download_button(
-    "Download optimized dataset",
-    df.to_csv(index=False),
-    file_name="optimized_results.csv"
-)

@@ -1,4 +1,3 @@
-import os
 import numpy as np
 import autograd.numpy as anp
 from autograd import jacobian
@@ -19,7 +18,6 @@ from data_loader import (
 # =====================================================
 # MAIN OPTIMIZATION FUNCTION
 # =====================================================
-HISTORICAL_YEAR = 2022
 
 def optimize_country_year(
     iso3,
@@ -27,9 +25,9 @@ def optimize_country_year(
     cv_year,
     data_file,
     coef_dir,
-    metadata_file
+    metadata_file,
+    previous_expenditures=None  
 ):
-    
 
     # -----------------------------
     # Country mapping
@@ -52,14 +50,24 @@ def optimize_country_year(
     N_VARS = len(OPT_VARS)
 
     # -----------------------------
-    # Load historical data
+    # Load historical controls
     # -----------------------------
     CONTROL_VALUES, HIST_INPUTS, _ = load_historical_data_by_iso3(
         data_file, iso3, year, cv_year, OPT_VARS
     )
 
-    X0 = np.array(build_starting_point(OPT_VARS, HIST_INPUTS))
-    HIST_TOTAL = np.sum(X0)
+    # =====================================================
+    # 🔥 INITIAL POINT & HIST_TOTAL
+    # =====================================================
+
+    if previous_expenditures is not None:
+        # ▶ Use optimized values from previous year
+        X0 = np.array([previous_expenditures[v] for v in OPT_VARS])
+        HIST_TOTAL = np.sum(X0)
+    else:
+        # ▶ First year: use historical data
+        X0 = np.array(build_starting_point(OPT_VARS, HIST_INPUTS))
+        HIST_TOTAL = np.sum(X0)
 
     # -----------------------------
     # Metadata
@@ -111,10 +119,9 @@ def optimize_country_year(
             for cv, c in coef["frontier"]["controls"].items():
                 y += c * anp.log(CONTROL_VALUES[cv])
 
-            # inefficiency
-            if direction == "lowerOrEqual":      # cost
+            if direction == "lowerOrEqual":
                 y = y + u
-            elif direction == "upperOrEqual":    # production
+            elif direction == "upperOrEqual":
                 y = y - u
 
             return y
@@ -162,6 +169,8 @@ def optimize_country_year(
     # -----------------------------
     # Objective
     # -----------------------------
+    
+    
     def objective(X):
         X = np.maximum(X, 1e-12)
         return (np.log(np.sum(X)) - np.log(HIST_TOTAL)) ** 2
@@ -180,7 +189,7 @@ def optimize_country_year(
         method="trust-constr",
         bounds=bounds,
         constraints=constraints,
-        options={"verbose": 0, "maxiter": 1000}
+        options={"maxiter": 1000}
     )
 
     # -----------------------------

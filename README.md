@@ -6,7 +6,7 @@ This repository contains a **local Streamlit application** for calibrating **Sto
 
 ---
 
-##  Main Features
+## 🚀 Main Features
 
 - Step-by-step **Streamlit wizard**
 - **SFA calibration in R** (Translog)
@@ -20,7 +20,7 @@ This repository contains a **local Streamlit application** for calibrating **Sto
 
 ---
 
-##  Project Structure
+## 📁 Project Structure
 
 ```
 ├── Step_1_Upload_Data.py
@@ -96,8 +96,6 @@ pip install -r requirements.txt
 
 ## 🧪 Required R Packages
 
-Automatically installed by `calibrate.R` if missing:
-
 - frontier
 - optparse
 - plm
@@ -106,28 +104,18 @@ Automatically installed by `calibrate.R` if missing:
 
 ---
 
-## ⚙️ Configuration (IMPORTANT)
+## ⚠️ Common Issue: Installing the `frontier` R Package (IMPORTANT)
 
-All paths and parameters are centralized in:
+On **Windows**, installing the `frontier` package may fail due to **administrative privilege requirements**.
 
-```text
-config.py
+### Recommended fix (manual installation)
+
+1. **Run R or RStudio as Administrator**
+2. Install the package manually:
+
+```r
+install.packages("frontier", repos = "https://cloud.r-project.org")
 ```
-
-Key variables:
-
-```python
-PROJECT_ROOT
-DATA_DIR
-COEF_DIR
-INDICATOR_METADATA_FILE
-CALIBRATION_SCRIPT
-DEFAULT_START_YEAR
-DEFAULT_END_YEAR
-```
-
-⚠️ If the project is moved to another folder, **only `PROJECT_ROOT` must be updated**.
-
 ---
 
 ## ▶️ Running the Application
@@ -140,39 +128,26 @@ python -m streamlit run Step_1_Upload_Data.py
 
 ---
 
-## 🧭 Application Workflow
+## 📊 How to Read the Charts
 
-### Step 1 — Upload Data
-- Upload CSV or Excel file
-- Data stored locally
+### 📈 Total Expenditure (All Years)
+- Shows total expenditure over time
+- Toggle between **absolute** and **per capita**
+- 🔴 Red dots indicate at least one negative expenditure 
 
-### Step 2 — Filter Dataset
-- Optional filtering (country, region, etc.)
+### 📊 Optimized Expenditure Allocation
+- Distribution of optimized expenditure 
+- 🔵 Bars: positive values
+- 🔻 Red triangles: negative values
 
-### Step 3 — Calibration (R)
-- Configure indicators, expenditures, controls
-- Choose model specification
-- Run SFA calibration
-- Outputs written to:
-  ```
-  Data/coef/
-  Data/summary/
-  Data/descriptive/
-  ```
+### 🎯 Optimized Value vs Target
+- ○ Target
+- ● Optimized value
+- ▬ Allowed range based on `TargetDirection`
+- Values outside the band indicate constraint violations
 
-### Step 4 — Optimization (Python)
-- Choose:
-  - With GDP constraint or without
-  - Single country or all countries
-  - Time horizon
-- Progress bar with ETA
-- Results written directly into dataset
-
-### Step 5 — Results & Diagnostics
-- Total expenditure evolution
-- Reallocation analysis
-- Indicators vs targets
-- Constraint status
+### 🚦 Constraint Status Table
+- Formal validation of indicator constraints
 
 ---
 
@@ -181,22 +156,11 @@ python -m streamlit run Step_1_Upload_Data.py
 ```
 Data/
 ├── coef/
-│   └── sfa_coefficients_X*.csv
 ├── summary/
-│   └── sfa_summary_X*.txt
 ├── descriptive/
 ├── optimized_output.csv
 ```
 
 ---
-
-## ⚠️ Common Issues
-
-### Rscript not found
-➡️ Fix `RSCRIPT_EXECUTABLE` in `config.py`
-
-### No coefficients found
-➡️ Calibration must be executed before optimization
-
 
 

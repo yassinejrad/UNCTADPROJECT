@@ -90,9 +90,7 @@ def optimize_country_year(
         gdp_growth = (gdp_t - gdp_t_minus_1) / gdp_t_minus_1
         log(f"GDP growth rate = {100 * gdp_growth:.2f}%")
 
-        log("Macro corridor:")
-        log(f"  LB = {HIST_TOTAL:.4f}")
-        log(f"  UB = {HIST_TOTAL * (1 + gdp_growth):.4f}")
+        
     else:
         log("❌ GDP growth could NOT be computed")
 
@@ -172,11 +170,17 @@ def optimize_country_year(
             constraints.append(NonlinearConstraint(f, lb, ub, jac=jac))
 
     if gdp_growth is not None:
+        gdp_factor = 1 + gdp_growth
+        lb = min(HIST_TOTAL, HIST_TOTAL * gdp_factor)
+        ub = max(HIST_TOTAL, HIST_TOTAL * gdp_factor)
+        log("Macro corridor:")
+        log(f"  LB = {lb:.4f}")
+        log(f"  UB = {ub:.4f}")
         constraints.append(
             NonlinearConstraint(
                 lambda X: np.sum(X),
-                lb=HIST_TOTAL,
-                ub=HIST_TOTAL * (1 + gdp_growth)
+                lb=lb,
+                ub=ub
             )
         )
         log("✅ GDP macro constraint ACTIVATED")

@@ -6,6 +6,7 @@ import time
 import tempfile
 import streamlit as st
 import pandas as pd
+from datetime import datetime
 
 from optimization import optimize_country_year as optimize_no_gdp
 from optimization_gdp import optimize_country_year as optimize_with_gdp
@@ -225,7 +226,10 @@ if run_clicked:
     # EXPORT RESULT
     # =====================================================
 
-    output_path = DATA_DIR / "optimized_output.csv"
+   
+
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    output_path = DATA_DIR / f"optimized_output_{timestamp}.csv"
     df.to_csv(output_path, index=False)
 
     st.session_state.opt_df = df.copy()

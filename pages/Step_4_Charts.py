@@ -13,7 +13,7 @@ st.set_page_config(page_title="Optimization Results", layout="wide")
 st.title("📊 Optimization Results & Diagnostics")
 
 # =====================================================
-# LOAD METADATA (ROBUST ENCODING)
+# LOAD METADATA 
 # =====================================================
 
 def load_sp1_metadata():
@@ -86,7 +86,7 @@ year = st.selectbox(
 df_y = df_c[df_c["years"] == year]
 
 # =====================================================
-# 1️⃣ TOTAL EXPENDITURE 
+#  TOTAL EXPENDITURE 
 # =====================================================
 
 st.subheader("📈 Total Expenditure (All Years)")
@@ -156,11 +156,14 @@ fig_total.update_layout(
 st.plotly_chart(fig_total, use_container_width=True)
 
 # =====================================================
-# 2️⃣ OPTIMIZED EXPENDITURE ALLOCATION 
+#  OPTIMIZED EXPENDITURE ALLOCATION (WITH REFERENCE YEAR)
 # =====================================================
 
 st.subheader("📊 Optimized Expenditure Allocation")
 
+# ---------------------------------------------
+# Expenditure type selector
+# ---------------------------------------------
 exp_type_alloc = st.radio(
     "Select expenditure type",
     ["Absolute expenditure", "Per capita expenditure"],
@@ -178,43 +181,89 @@ else:
         c for c in exp_cols if not c.endswith("_PC") and c != "GVT_TOTAL"
     ]
 
-values = df_y[exp_cols_alloc].iloc[0]
+# ---------------------------------------------
+# Reference year selector
+# ---------------------------------------------
+ref_year = st.selectbox(
+    "Select reference year for comparison",
+    sorted(df_c["years"].unique()),  
+    index=0
+)
 
-pos_mask = values > 0
-neg_mask = values < 0
+values_opt = df_y[exp_cols_alloc].iloc[0]
+
+df_ref = df_c[df_c["years"] == ref_year]  
+
+if df_ref.empty:
+    st.warning("No data available for the selected reference year.")
+    st.stop()
+
+values_ref = df_ref[exp_cols_alloc].iloc[0]
+
+
+pos_mask = values_opt > 0
+neg_mask = values_opt < 0
+
 
 fig_alloc = go.Figure()
 
+# Optimized year (blue bars)
 fig_alloc.add_bar(
-    x=values.index[pos_mask],
-    y=values[pos_mask],
+    x=values_opt.index[pos_mask],
+    y=values_opt[pos_mask],
+    name="Optimized year",
     marker_color="#1f77b4",
-    name="Positive expenditure"
+    offsetgroup=0
 )
+
+# Reference year (red bars)
+fig_alloc.add_bar(
+    x=values_ref.index,
+    y=values_ref,
+    name=f"Reference year ({ref_year})",
+    marker_color="#d62728",
+    offsetgroup=1
+)
+
 
 fig_alloc.add_trace(
     go.Scatter(
-        x=values.index[neg_mask],
-        y=values[neg_mask],
+        x=values_opt.index[neg_mask],
+        y=values_opt[neg_mask],
         mode="markers",
         marker=dict(
             symbol="triangle-down",
             size=14,
             color="#d62728"
         ),
-        name="Negative expenditure"
+        name="Negative optimized values"
     )
 )
 
-fig_alloc.add_hline(y=0, line_width=2, line_color="black")
+# Zero line
+fig_alloc.add_hline(
+    y=0,
+    line_width=2,
+    line_color="black"
+)
 
+# Layout
 fig_alloc.update_layout(
+    barmode="group",
     xaxis_title="Expenditure category",
     yaxis_title="Value",
-    height=450
+    height=450,
+    legend=dict(
+        orientation="h",
+        yanchor="bottom",
+        y=1.02,
+        xanchor="right",
+        x=1
+    )
 )
 
 st.plotly_chart(fig_alloc, use_container_width=True)
+
 
 # =====================================================
 # 3️⃣ INDICATORS VS TARGET

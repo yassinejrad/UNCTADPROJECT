@@ -204,3 +204,41 @@ summary_file <- file.path(summary_dir, paste0("sfa_summary_", indicator_name, ".
 summary_txt <- capture.output(summary(sfa_model))
 writeLines(summary_txt, summary_file)
 cat("✅ Summary saved to:", summary_file, "\n")
+
+
+
+# ------------------------
+# summary table with significance stars
+# ------------------------
+
+
+sum_obj <- summary(sfa_model)
+coef_mat <- sum_obj$mleParam
+
+summary_df <- data.frame(
+  Variable   = rownames(coef_mat),
+  Estimate   = coef_mat[, "Estimate"],
+  Std_Error  = coef_mat[, "Std. Error"],
+  z_value    = coef_mat[, "z value"],
+  p_value    = coef_mat[, "Pr(>|z|)"],
+  stringsAsFactors = FALSE
+)
+
+
+summary_df$Significance <- cut(
+  summary_df$p_value,
+  breaks = c(-Inf, 0.001, 0.01, 0.05, 0.1, Inf),
+  labels = c("***", "**", "*", ".", ""),
+  right = TRUE
+)
+
+
+summary_csv_file <- file.path(
+  summary_dir,
+  paste0("sfa_summary_table_", indicator_name, ".csv")
+)
+write.csv(summary_df, summary_csv_file, row.names = FALSE)
+
+
+cat("✅ Summary table with significance stars saved to:\n",
+    summary_csv_file, "\n")

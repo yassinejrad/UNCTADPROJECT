@@ -13,9 +13,13 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 
 DATA_DIR = PROJECT_ROOT / "Data"
 COEF_DIR = DATA_DIR / "coef"
+SUMMARY_DIR = DATA_DIR / "summary"
 
 INPUT_DATA_FILE = DATA_DIR / "INPUT_SP1_ALL_exploration_subset(in).csv"
 OPTIMIZED_OUTPUT_FILE = DATA_DIR / "optimized_output.csv"
+
+OPT_RESULTS_DIR = DATA_DIR / "optimization results"
+
 
 # =====================================================
 # METADATA

@@ -7,11 +7,12 @@ import tempfile
 import streamlit as st
 import pandas as pd
 from datetime import datetime
+from pathlib import Path
 
 from optimization import optimize_country_year as optimize_no_gdp
 from optimization_gdp import optimize_country_year as optimize_with_gdp
-from data_loader import load_indicator_metadata
 from optimization_minmax import optimize_country_year_minimax as optimize_with_minmax
+from data_loader import load_indicator_metadata
 
 from config import (
     DATA_DIR,
@@ -24,7 +25,7 @@ from config import (
 # =====================================================
 
 if "filtered_data" not in st.session_state or st.session_state.filtered_data is None:
-    st.error("❌ No filtered data found. Please complete Step 1 ")
+    st.error("❌ No filtered data found. Please complete Step 1")
     st.stop()
 
 st.subheader("Step 3 — Optimization")
@@ -38,6 +39,13 @@ df = st.session_state.filtered_data.copy()
 tmp_dir = tempfile.mkdtemp()
 TMP_DATA_FILE = f"{tmp_dir}/filtered_input.csv"
 df.to_csv(TMP_DATA_FILE, index=False)
+
+# =====================================================
+# RESULTS DIRECTORY
+# =====================================================
+
+OPT_RESULTS_DIR = Path(DATA_DIR) / "optimization_results"
+OPT_RESULTS_DIR.mkdir(exist_ok=True)
 
 # =====================================================
 # COUNTRY MAPPING
@@ -64,11 +72,7 @@ OPT_MODES = {
     "SDG-balanced optimization (maximize worst indicator)": "sdg_balanced"
 }
 
-opt_label = st.radio(
-    "Select optimization mode",
-    options=list(OPT_MODES.keys())
-)
-
+opt_label = st.radio("Select optimization mode", OPT_MODES.keys())
 opt_mode = OPT_MODES[opt_label]
 
 if opt_mode == "with_gdp":
@@ -78,30 +82,40 @@ elif opt_mode == "sdg_balanced":
 else:
     optimize_fn = optimize_no_gdp
 
+# =====================================================
+# HISTORICAL ANCHORING
+# =====================================================
+
+ANCHOR_MODES = {
+    "Rolling (dynamic path)": "rolling",
+    "Fixed historical year": "fixed",
+    "Base year + skip years": "base_skip"
+}
+
+st.subheader("📌 Historical anchoring")
+
+anchor_label = st.radio("Anchoring strategy", ANCHOR_MODES.keys())
+anchor_mode = ANCHOR_MODES[anchor_label]
+
+available_years = sorted(df["years"].dropna().unique())
+reference_year = None
+
+if anchor_mode in {"fixed", "base_skip"}:
+    reference_year = st.selectbox("Reference historical year", available_years)
 
 # =====================================================
 # TIME CONFIGURATION
 # =====================================================
-
-available_years = sorted(df["years"].dropna().unique())
 
 st.subheader("🕒 Time horizon")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    START_YEAR = st.selectbox(
-        "Start year (historical base)",
-        available_years,
-        index=available_years.index(2022) if 2022 in available_years else 0
-    )
+    START_YEAR = st.selectbox("Start year", available_years)
 
 with col2:
-    END_YEAR = st.selectbox(
-        "End year (last optimized year)",
-        available_years,
-        index=available_years.index(2030) if 2030 in available_years else len(available_years) - 1
-    )
+    END_YEAR = st.selectbox("End year", available_years)
 
 if END_YEAR <= START_YEAR:
     st.error("❌ End year must be strictly greater than start year")
@@ -113,16 +127,10 @@ if END_YEAR <= START_YEAR:
 
 st.subheader("🌍 Country selection")
 
-run_mode = st.radio(
-    "Run mode",
-    ["Single country", "All countries"]
-)
+run_mode = st.radio("Run mode", ["Single country", "All countries"])
 
 if run_mode == "Single country":
-    selected_country = st.selectbox(
-        "Select country",
-        country_name_to_iso3.keys()
-    )
+    selected_country = st.selectbox("Select country", country_name_to_iso3.keys())
     countries = [country_name_to_iso3[selected_country]]
 else:
     countries = list(country_name_to_iso3.values())
@@ -151,9 +159,6 @@ if stop_clicked:
 # RUN OPTIMIZATION
 # =====================================================
 
-# STEP 3 — OPTIMIZATION 
-
-
 if run_clicked:
 
     st.session_state.stop_optimization = False
@@ -168,13 +173,11 @@ if run_clicked:
 
     for iso3 in countries:
 
-        previous_expenditures = None   
+        previous_expenditures = None
 
-        country_label = (
-            country_map
-            .loc[country_map["iso3"] == iso3, "Country_name"]
-            .iloc[0]
-        )
+        country_label = country_map.loc[
+            country_map["iso3"] == iso3, "Country_name"
+        ].iloc[0]
 
         log_box.markdown(f"## 🌍 {country_label} ({iso3})")
 
@@ -193,10 +196,13 @@ if run_clicked:
                 data_file=TMP_DATA_FILE,
                 coef_dir=str(COEF_DIR),
                 metadata_file=str(INDICATOR_METADATA_FILE),
-                previous_expenditures=previous_expenditures  
+                previous_expenditures=previous_expenditures,
+                anchor_mode=anchor_mode,
+                reference_year=reference_year,
+                start_year=START_YEAR
             )
 
-            previous_expenditures = result["expenditures"]  
+            previous_expenditures = result["expenditures"]
 
             mask = (df["iso3"] == iso3) & (df["years"] == year + 1)
 
@@ -205,6 +211,11 @@ if run_clicked:
 
             for k, v in result["indicators"].items():
                 df.loc[mask, k] = v
+
+            # 🔖 LABEL OUTPUTS
+            df.loc[mask, "optimization_mode"] = opt_mode
+            df.loc[mask, "anchoring_strategy"] = anchor_mode
+            df.loc[mask, "reference_year"] = reference_year
 
             step_counter += 1
             progress_bar.progress(step_counter / total_steps)
@@ -226,27 +237,19 @@ if run_clicked:
     # EXPORT RESULT
     # =====================================================
 
-   
-
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    output_path = DATA_DIR / f"optimized_output_{timestamp}.csv"
+    output_path = OPT_RESULTS_DIR / f"optimized_{opt_mode}_{anchor_mode}_{timestamp}.csv"
     df.to_csv(output_path, index=False)
 
     st.session_state.opt_df = df.copy()
 
-    st.download_button(
-        "⬇ Download optimized dataset",
-        df.to_csv(index=False),
-        file_name="optimized_dataset.csv"
-    )
+    
 
 # =====================================================
-# SAVE RESULTS IN SESSION STATE (FOR NEXT PAGES)
+# SAVE RESULTS IN SESSION STATE
 # =====================================================
 
-indicator_meta = load_indicator_metadata(INDICATOR_METADATA_FILE)
-
-st.session_state.indicator_meta = indicator_meta
+st.session_state.indicator_meta = load_indicator_metadata(INDICATOR_METADATA_FILE)
 st.session_state.optimized_countries = countries
 st.session_state.optimized_years = list(range(START_YEAR + 1, END_YEAR + 1))
 st.session_state.run_mode = run_mode

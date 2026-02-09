@@ -1,394 +1,442 @@
 Efficiency Effects Frontier (see Battese & Coelli 1995)
 Inefficiency increases the endogenous variable (as in a cost function)
 The dependent variable is logged
-Iterative ML estimation terminated after 104 iterations:
+Iterative ML estimation terminated after 127 iterations:
 cannot find a parameter vector that results in a log-likelihood value
 larger than the log-likelihood value obtained in the previous step
 
 final maximum likelihood estimates
                                                                  Estimate
-(Intercept)                                                    1.3305e+01
-log(GVT_AGRI_FORESTRY_PC)                                      9.3000e-01
-log(GVT_COMMUNICATION_PC)                                      8.4331e-01
-log(GVT_ECON_AFFAIRS_PC)                                      -1.7617e+00
-log(GVT_EDUCATION_PC)                                         -2.5149e+00
-log(GVT_ENERGY_PC)                                             1.5676e-01
-log(GVT_ENV_PROTECTION_PC)                                     3.0546e-01
-log(GVT_HEALTH_PC)                                             1.4167e+00
-log(GVT_HOUSING_AMEN_PC)                                       9.5088e-02
-log(GVT_SOCIAL_PROTECTION_PC)                                 -2.2999e-02
-log(GVT_TRANSPORT_PC)                                         -3.8606e-02
-I(log(GVT_AGRI_FORESTRY_PC)^2)                                -4.8303e-02
-I(log(GVT_COMMUNICATION_PC)^2)                                 4.3324e-03
-I(log(GVT_ECON_AFFAIRS_PC)^2)                                  8.0486e-02
-I(log(GVT_EDUCATION_PC)^2)                                     1.1222e-01
-I(log(GVT_ENERGY_PC)^2)                                        6.3869e-03
-I(log(GVT_ENV_PROTECTION_PC)^2)                                1.8244e-02
-I(log(GVT_HEALTH_PC)^2)                                        1.9237e-02
-I(log(GVT_HOUSING_AMEN_PC)^2)                                  6.0112e-02
-I(log(GVT_SOCIAL_PROTECTION_PC)^2)                            -7.2094e-02
-I(log(GVT_TRANSPORT_PC)^2)                                    -1.1785e-01
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_COMMUNICATION_PC))       6.5634e-02
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ECON_AFFAIRS_PC))       -1.2081e-01
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_EDUCATION_PC))          -4.0251e-01
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENERGY_PC))              3.6247e-02
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENV_PROTECTION_PC))     -1.0208e-01
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HEALTH_PC))              1.2628e-01
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HOUSING_AMEN_PC))        1.0365e-01
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_SOCIAL_PROTECTION_PC))   7.9492e-02
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_TRANSPORT_PC))           2.4807e-01
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ECON_AFFAIRS_PC))       -4.2738e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_EDUCATION_PC))          -2.5944e-01
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ENERGY_PC))             -7.8632e-03
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ENV_PROTECTION_PC))      2.5077e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_HEALTH_PC))              2.9074e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_HOUSING_AMEN_PC))       -5.1892e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))   1.0673e-01
-I(log(GVT_COMMUNICATION_PC) * log(GVT_TRANSPORT_PC))          -2.0356e-02
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_EDUCATION_PC))            9.4739e-01
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENERGY_PC))              -5.7403e-02
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENV_PROTECTION_PC))      -5.8012e-02
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HEALTH_PC))              -4.1029e-01
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HOUSING_AMEN_PC))        -3.4554e-02
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_SOCIAL_PROTECTION_PC))   -1.8874e-01
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_TRANSPORT_PC))           -1.2317e-01
-I(log(GVT_EDUCATION_PC) * log(GVT_ENERGY_PC))                 -4.9516e-05
-I(log(GVT_EDUCATION_PC) * log(GVT_ENV_PROTECTION_PC))          1.7936e-01
-I(log(GVT_EDUCATION_PC) * log(GVT_HEALTH_PC))                 -2.6177e-01
-I(log(GVT_EDUCATION_PC) * log(GVT_HOUSING_AMEN_PC))           -4.7670e-01
-I(log(GVT_EDUCATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))       1.4920e-01
-I(log(GVT_EDUCATION_PC) * log(GVT_TRANSPORT_PC))              -1.2068e-01
-I(log(GVT_ENERGY_PC) * log(GVT_ENV_PROTECTION_PC))             2.7345e-02
-I(log(GVT_ENERGY_PC) * log(GVT_HEALTH_PC))                    -3.3821e-02
-I(log(GVT_ENERGY_PC) * log(GVT_HOUSING_AMEN_PC))              -1.4884e-02
-I(log(GVT_ENERGY_PC) * log(GVT_SOCIAL_PROTECTION_PC))          1.7388e-02
-I(log(GVT_ENERGY_PC) * log(GVT_TRANSPORT_PC))                  3.0806e-02
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HEALTH_PC))            -1.1669e-01
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HOUSING_AMEN_PC))      -5.5436e-02
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_SOCIAL_PROTECTION_PC)) -4.5842e-03
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_TRANSPORT_PC))          7.9770e-03
-I(log(GVT_HEALTH_PC) * log(GVT_HOUSING_AMEN_PC))               3.1455e-01
-I(log(GVT_HEALTH_PC) * log(GVT_SOCIAL_PROTECTION_PC))          9.0040e-03
-I(log(GVT_HEALTH_PC) * log(GVT_TRANSPORT_PC))                  1.1824e-01
-I(log(GVT_HOUSING_AMEN_PC) * log(GVT_SOCIAL_PROTECTION_PC))    3.4782e-02
-I(log(GVT_HOUSING_AMEN_PC) * log(GVT_TRANSPORT_PC))            1.1890e-01
-I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_TRANSPORT_PC))       9.2492e-02
-log(CV_GDP)                                                   -1.7852e-01
-Z_CV_CC                                                       -5.4920e-03
-Z_CV_GE                                                       -8.3906e-03
-Z_factor(Country_name)Afghanistan                             -6.8570e-02
-Z_factor(Country_name)Azerbaijan                               2.3660e-01
-Z_factor(Country_name)Belize                                  -7.1692e-02
-Z_factor(Country_name)Bolivia (Plurinational State of)        -8.6299e-02
-Z_factor(Country_name)China                                    8.4353e-01
-Z_factor(Country_name)Costa Rica                               9.1949e-01
-Z_factor(Country_name)Ecuador                                  1.3296e+00
-Z_factor(Country_name)Egypt                                    1.5753e+00
-Z_factor(Country_name)El Salvador                              3.9553e-01
-Z_factor(Country_name)Guatemala                                1.4818e+00
-Z_factor(Country_name)Honduras                                 1.0564e+00
-Z_factor(Country_name)Jamaica                                  3.0296e-01
-Z_factor(Country_name)Kuwait                                   3.2052e-01
-Z_factor(Country_name)Kyrgyzstan                              -1.8810e+00
-Z_factor(Country_name)Mexico                                  -5.7643e-01
-Z_factor(Country_name)Myanmar                                 -2.9786e-01
-Z_factor(Country_name)Nepal                                   -2.4016e-04
-Z_factor(Country_name)Panama                                  -2.0615e+00
-Z_factor(Country_name)Singapore                                1.0672e+00
-Z_factor(Country_name)South Africa                             1.8106e+00
-Z_factor(Country_name)Thailand                                 4.2347e-01
-Z_factor(Country_name)Türkiye                                 -1.9107e-01
-Z_factor(Country_name)Uruguay                                  1.1307e+00
-sigmaSq                                                        2.2454e-02
-gamma                                                          1.0000e-08
+(Intercept)                                                    1.57426579
+log(GVT_AGRI_FORESTRY_PC)                                      0.49422963
+log(GVT_COMMUNICATION_PC)                                      0.92342424
+log(GVT_ECON_AFFAIRS_PC)                                      -0.08232052
+log(GVT_EDUCATION_PC)                                          1.42065987
+log(GVT_ENERGY_PC)                                            -0.12575145
+log(GVT_ENV_PROTECTION_PC)                                    -0.10400823
+log(GVT_HEALTH_PC)                                            -2.94826622
+log(GVT_HOUSING_AMEN_PC)                                       1.20557550
+log(GVT_SOCIAL_PROTECTION_PC)                                 -0.51464368
+log(GVT_OTHER_PC)                                              2.84981347
+log(GVT_TRANSPORT_PC)                                         -1.35906766
+I(log(GVT_AGRI_FORESTRY_PC)^2)                                -0.31046396
+I(log(GVT_COMMUNICATION_PC)^2)                                 0.04355942
+I(log(GVT_ECON_AFFAIRS_PC)^2)                                 -0.10846294
+I(log(GVT_EDUCATION_PC)^2)                                    -0.32287378
+I(log(GVT_ENERGY_PC)^2)                                        0.03757889
+I(log(GVT_ENV_PROTECTION_PC)^2)                                0.01483875
+I(log(GVT_HEALTH_PC)^2)                                       -0.44554476
+I(log(GVT_HOUSING_AMEN_PC)^2)                                  0.10125407
+I(log(GVT_SOCIAL_PROTECTION_PC)^2)                            -0.03790549
+I(log(GVT_OTHER_PC)^2)                                        -0.49056776
+I(log(GVT_TRANSPORT_PC)^2)                                    -0.00943860
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_COMMUNICATION_PC))       0.21311561
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ECON_AFFAIRS_PC))        0.27180750
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_EDUCATION_PC))           0.31577145
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENERGY_PC))              0.03474047
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENV_PROTECTION_PC))     -0.04699092
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HEALTH_PC))             -0.34137158
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HOUSING_AMEN_PC))        0.09669395
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_SOCIAL_PROTECTION_PC))   0.14976120
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_OTHER_PC))              -0.16832928
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_TRANSPORT_PC))          -0.00416911
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ECON_AFFAIRS_PC))       -0.13806443
+I(log(GVT_COMMUNICATION_PC) * log(GVT_EDUCATION_PC))          -0.33462149
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ENERGY_PC))              0.03374140
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ENV_PROTECTION_PC))      0.03870263
+I(log(GVT_COMMUNICATION_PC) * log(GVT_HEALTH_PC))              0.19823489
+I(log(GVT_COMMUNICATION_PC) * log(GVT_HOUSING_AMEN_PC))        0.01247546
+I(log(GVT_COMMUNICATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))   0.03596021
+I(log(GVT_COMMUNICATION_PC) * log(GVT_OTHER_PC))               0.08330947
+I(log(GVT_COMMUNICATION_PC) * log(GVT_TRANSPORT_PC))          -0.27872936
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_EDUCATION_PC))           -0.02629517
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENERGY_PC))              -0.13404174
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENV_PROTECTION_PC))      -0.16428066
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HEALTH_PC))               0.11106769
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HOUSING_AMEN_PC))        -0.11532413
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_SOCIAL_PROTECTION_PC))   -0.13530873
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_OTHER_PC))                0.12964814
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_TRANSPORT_PC))            0.16026241
+I(log(GVT_EDUCATION_PC) * log(GVT_ENERGY_PC))                  0.22355037
+I(log(GVT_EDUCATION_PC) * log(GVT_ENV_PROTECTION_PC))          0.10843876
+I(log(GVT_EDUCATION_PC) * log(GVT_HEALTH_PC))                  0.67529558
+I(log(GVT_EDUCATION_PC) * log(GVT_HOUSING_AMEN_PC))           -0.56824789
+I(log(GVT_EDUCATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))       0.14312132
+I(log(GVT_EDUCATION_PC) * log(GVT_OTHER_PC))                  -0.11370499
+I(log(GVT_EDUCATION_PC) * log(GVT_TRANSPORT_PC))              -0.08381486
+I(log(GVT_ENERGY_PC) * log(GVT_ENV_PROTECTION_PC))             0.02521440
+I(log(GVT_ENERGY_PC) * log(GVT_HEALTH_PC))                    -0.09388031
+I(log(GVT_ENERGY_PC) * log(GVT_HOUSING_AMEN_PC))              -0.07184269
+I(log(GVT_ENERGY_PC) * log(GVT_SOCIAL_PROTECTION_PC))          0.03375628
+I(log(GVT_ENERGY_PC) * log(GVT_OTHER_PC))                     -0.01667765
+I(log(GVT_ENERGY_PC) * log(GVT_TRANSPORT_PC))                  0.00063214
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HEALTH_PC))            -0.12834664
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HOUSING_AMEN_PC))       0.02814103
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_SOCIAL_PROTECTION_PC))  0.03154123
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_OTHER_PC))              0.09694463
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_TRANSPORT_PC))          0.05037091
+I(log(GVT_HEALTH_PC) * log(GVT_HOUSING_AMEN_PC))               0.31104659
+I(log(GVT_HEALTH_PC) * log(GVT_SOCIAL_PROTECTION_PC))          0.01625207
+I(log(GVT_HEALTH_PC) * log(GVT_OTHER_PC))                      0.40332626
+I(log(GVT_HEALTH_PC) * log(GVT_TRANSPORT_PC))                  0.05490558
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_SOCIAL_PROTECTION_PC))   -0.04504026
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_OTHER_PC))                0.08407549
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_TRANSPORT_PC))           -0.06530918
+I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_OTHER_PC))           0.08352209
+I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_TRANSPORT_PC))      -0.03281059
+I(log(GVT_OTHER_PC) * log(GVT_TRANSPORT_PC))                   0.24081551
+log(CV_GDP)                                                   -0.12911478
+Z_CV_CC                                                        0.01139571
+Z_CV_GE                                                       -0.00333022
+Z_factor(Country_name)Afghanistan                              1.11286463
+Z_factor(Country_name)Azerbaijan                               0.00863373
+Z_factor(Country_name)Belize                                  -0.35851024
+Z_factor(Country_name)Bolivia (Plurinational State of)         0.18173130
+Z_factor(Country_name)China                                   -0.20873456
+Z_factor(Country_name)Costa Rica                              -0.84698492
+Z_factor(Country_name)Ecuador                                 -0.07950527
+Z_factor(Country_name)Egypt                                    0.32891272
+Z_factor(Country_name)El Salvador                              0.09301385
+Z_factor(Country_name)Guatemala                                0.97636598
+Z_factor(Country_name)Honduras                                 0.77725978
+Z_factor(Country_name)Jamaica                                 -0.25214862
+Z_factor(Country_name)Kuwait                                   0.04055713
+Z_factor(Country_name)Kyrgyzstan                               0.03693516
+Z_factor(Country_name)Mexico                                  -0.35634285
+Z_factor(Country_name)Myanmar                                 -1.01610765
+Z_factor(Country_name)Nepal                                   -0.00904246
+Z_factor(Country_name)Panama                                  -0.05846842
+Z_factor(Country_name)Singapore                               -0.59996459
+Z_factor(Country_name)South Africa                             0.27916285
+Z_factor(Country_name)Thailand                                -0.42194859
+Z_factor(Country_name)Türkiye                                  0.05922866
+Z_factor(Country_name)Uruguay                                 -0.58652734
+sigmaSq                                                        0.03684927
+gamma                                                          0.99991443
                                                                Std. Error
-(Intercept)                                                    8.5439e-01
-log(GVT_AGRI_FORESTRY_PC)                                      3.2295e-01
-log(GVT_COMMUNICATION_PC)                                      1.7105e-01
-log(GVT_ECON_AFFAIRS_PC)                                       5.4455e-01
-log(GVT_EDUCATION_PC)                                          6.8604e-01
-log(GVT_ENERGY_PC)                                             9.6495e-02
-log(GVT_ENV_PROTECTION_PC)                                     1.4742e-01
-log(GVT_HEALTH_PC)                                             5.0656e-01
-log(GVT_HOUSING_AMEN_PC)                                       2.1065e-01
-log(GVT_SOCIAL_PROTECTION_PC)                                  2.5810e-01
-log(GVT_TRANSPORT_PC)                                          2.7463e-01
-I(log(GVT_AGRI_FORESTRY_PC)^2)                                 5.1034e-02
-I(log(GVT_COMMUNICATION_PC)^2)                                 2.1435e-02
-I(log(GVT_ECON_AFFAIRS_PC)^2)                                  7.8198e-02
-I(log(GVT_EDUCATION_PC)^2)                                     1.8022e-01
-I(log(GVT_ENERGY_PC)^2)                                        5.9298e-03
-I(log(GVT_ENV_PROTECTION_PC)^2)                                7.2870e-03
-I(log(GVT_HEALTH_PC)^2)                                        1.1344e-01
-I(log(GVT_HOUSING_AMEN_PC)^2)                                  2.5214e-02
-I(log(GVT_SOCIAL_PROTECTION_PC)^2)                             2.6796e-02
-I(log(GVT_TRANSPORT_PC)^2)                                     4.3606e-02
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_COMMUNICATION_PC))       5.3195e-02
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ECON_AFFAIRS_PC))        1.0513e-01
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_EDUCATION_PC))           1.3405e-01
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENERGY_PC))              2.5335e-02
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENV_PROTECTION_PC))      3.2378e-02
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HEALTH_PC))              1.0841e-01
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HOUSING_AMEN_PC))        4.9665e-02
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_SOCIAL_PROTECTION_PC))   6.3946e-02
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_TRANSPORT_PC))           6.9247e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ECON_AFFAIRS_PC))        5.0715e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_EDUCATION_PC))           7.0205e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ENERGY_PC))              1.3898e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ENV_PROTECTION_PC))      1.7986e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_HEALTH_PC))              6.2248e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_HOUSING_AMEN_PC))        3.2645e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))   3.6881e-02
-I(log(GVT_COMMUNICATION_PC) * log(GVT_TRANSPORT_PC))           5.0270e-02
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_EDUCATION_PC))            1.9420e-01
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENERGY_PC))               2.8116e-02
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENV_PROTECTION_PC))       3.8689e-02
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HEALTH_PC))               1.4123e-01
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HOUSING_AMEN_PC))         7.4916e-02
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_SOCIAL_PROTECTION_PC))    5.3728e-02
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_TRANSPORT_PC))            8.5423e-02
-I(log(GVT_EDUCATION_PC) * log(GVT_ENERGY_PC))                  4.5204e-02
-I(log(GVT_EDUCATION_PC) * log(GVT_ENV_PROTECTION_PC))          7.1195e-02
-I(log(GVT_EDUCATION_PC) * log(GVT_HEALTH_PC))                  2.3666e-01
-I(log(GVT_EDUCATION_PC) * log(GVT_HOUSING_AMEN_PC))            8.7828e-02
-I(log(GVT_EDUCATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))       1.0714e-01
-I(log(GVT_EDUCATION_PC) * log(GVT_TRANSPORT_PC))               1.4993e-01
-I(log(GVT_ENERGY_PC) * log(GVT_ENV_PROTECTION_PC))             9.5818e-03
-I(log(GVT_ENERGY_PC) * log(GVT_HEALTH_PC))                     3.4919e-02
-I(log(GVT_ENERGY_PC) * log(GVT_HOUSING_AMEN_PC))               1.8260e-02
-I(log(GVT_ENERGY_PC) * log(GVT_SOCIAL_PROTECTION_PC))          1.8737e-02
-I(log(GVT_ENERGY_PC) * log(GVT_TRANSPORT_PC))                  1.5533e-02
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HEALTH_PC))             5.7956e-02
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HOUSING_AMEN_PC))       2.0653e-02
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_SOCIAL_PROTECTION_PC))  2.2328e-02
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_TRANSPORT_PC))          2.4766e-02
-I(log(GVT_HEALTH_PC) * log(GVT_HOUSING_AMEN_PC))               8.9162e-02
-I(log(GVT_HEALTH_PC) * log(GVT_SOCIAL_PROTECTION_PC))          1.0812e-01
-I(log(GVT_HEALTH_PC) * log(GVT_TRANSPORT_PC))                  1.3615e-01
-I(log(GVT_HOUSING_AMEN_PC) * log(GVT_SOCIAL_PROTECTION_PC))    4.1751e-02
-I(log(GVT_HOUSING_AMEN_PC) * log(GVT_TRANSPORT_PC))            4.4092e-02
-I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_TRANSPORT_PC))       5.1798e-02
-log(CV_GDP)                                                    1.6738e-02
-Z_CV_CC                                                        3.9666e-03
-Z_CV_GE                                                        4.0525e-03
-Z_factor(Country_name)Afghanistan                              1.5545e-01
-Z_factor(Country_name)Azerbaijan                               2.6138e-01
-Z_factor(Country_name)Belize                                   2.1797e-01
-Z_factor(Country_name)Bolivia (Plurinational State of)         1.4330e-01
-Z_factor(Country_name)China                                    2.1952e-01
-Z_factor(Country_name)Costa Rica                               2.7517e-01
-Z_factor(Country_name)Ecuador                                  1.9518e-01
-Z_factor(Country_name)Egypt                                    1.7847e-01
-Z_factor(Country_name)El Salvador                              2.3659e-01
-Z_factor(Country_name)Guatemala                                1.3983e-01
-Z_factor(Country_name)Honduras                                 1.5124e-01
-Z_factor(Country_name)Jamaica                                  2.4860e-01
-Z_factor(Country_name)Kuwait                                   2.4842e-01
-Z_factor(Country_name)Kyrgyzstan                               4.2971e-01
-Z_factor(Country_name)Mexico                                   2.5870e-01
-Z_factor(Country_name)Myanmar                                  1.4437e-01
-Z_factor(Country_name)Nepal                                    1.6844e-01
-Z_factor(Country_name)Panama                                   2.6684e-01
-Z_factor(Country_name)Singapore                                4.1264e-01
-Z_factor(Country_name)South Africa                             2.6457e-01
-Z_factor(Country_name)Thailand                                 2.7132e-01
-Z_factor(Country_name)Türkiye                                  2.5099e-01
-Z_factor(Country_name)Uruguay                                  3.3257e-01
-sigmaSq                                                        2.5336e-03
-gamma                                                          3.3663e-07
+(Intercept)                                                    0.84911899
+log(GVT_AGRI_FORESTRY_PC)                                      0.37436573
+log(GVT_COMMUNICATION_PC)                                      0.17888937
+log(GVT_ECON_AFFAIRS_PC)                                       0.49219113
+log(GVT_EDUCATION_PC)                                          0.76788419
+log(GVT_ENERGY_PC)                                             0.10424492
+log(GVT_ENV_PROTECTION_PC)                                     0.15809784
+log(GVT_HEALTH_PC)                                             0.61081846
+log(GVT_HOUSING_AMEN_PC)                                       0.30402387
+log(GVT_SOCIAL_PROTECTION_PC)                                  0.49762533
+log(GVT_OTHER_PC)                                              0.52288297
+log(GVT_TRANSPORT_PC)                                          0.40623403
+I(log(GVT_AGRI_FORESTRY_PC)^2)                                 0.05946520
+I(log(GVT_COMMUNICATION_PC)^2)                                 0.02295570
+I(log(GVT_ECON_AFFAIRS_PC)^2)                                  0.06406602
+I(log(GVT_EDUCATION_PC)^2)                                     0.21563822
+I(log(GVT_ENERGY_PC)^2)                                        0.00561726
+I(log(GVT_ENV_PROTECTION_PC)^2)                                0.00665494
+I(log(GVT_HEALTH_PC)^2)                                        0.15125575
+I(log(GVT_HOUSING_AMEN_PC)^2)                                  0.02447095
+I(log(GVT_SOCIAL_PROTECTION_PC)^2)                             0.02427781
+I(log(GVT_OTHER_PC)^2)                                         0.10057752
+I(log(GVT_TRANSPORT_PC)^2)                                     0.05100112
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_COMMUNICATION_PC))       0.05545441
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ECON_AFFAIRS_PC))        0.10295935
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_EDUCATION_PC))           0.15859627
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENERGY_PC))              0.02003701
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENV_PROTECTION_PC))      0.04464730
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HEALTH_PC))              0.14937466
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HOUSING_AMEN_PC))        0.05051423
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_SOCIAL_PROTECTION_PC))   0.09434380
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_OTHER_PC))               0.10742870
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_TRANSPORT_PC))           0.09223093
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ECON_AFFAIRS_PC))        0.04947276
+I(log(GVT_COMMUNICATION_PC) * log(GVT_EDUCATION_PC))           0.08568614
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ENERGY_PC))              0.01166871
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ENV_PROTECTION_PC))      0.01779463
+I(log(GVT_COMMUNICATION_PC) * log(GVT_HEALTH_PC))              0.08407952
+I(log(GVT_COMMUNICATION_PC) * log(GVT_HOUSING_AMEN_PC))        0.04091155
+I(log(GVT_COMMUNICATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))   0.04971868
+I(log(GVT_COMMUNICATION_PC) * log(GVT_OTHER_PC))               0.06774409
+I(log(GVT_COMMUNICATION_PC) * log(GVT_TRANSPORT_PC))           0.06008427
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_EDUCATION_PC))            0.23588949
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENERGY_PC))               0.02421559
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENV_PROTECTION_PC))       0.03080994
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HEALTH_PC))               0.15625633
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HOUSING_AMEN_PC))         0.06522666
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_SOCIAL_PROTECTION_PC))    0.06803091
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_OTHER_PC))                0.13060940
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_TRANSPORT_PC))            0.10592777
+I(log(GVT_EDUCATION_PC) * log(GVT_ENERGY_PC))                  0.04673393
+I(log(GVT_EDUCATION_PC) * log(GVT_ENV_PROTECTION_PC))          0.09204019
+I(log(GVT_EDUCATION_PC) * log(GVT_HEALTH_PC))                  0.26947699
+I(log(GVT_EDUCATION_PC) * log(GVT_HOUSING_AMEN_PC))            0.10745967
+I(log(GVT_EDUCATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))       0.16176913
+I(log(GVT_EDUCATION_PC) * log(GVT_OTHER_PC))                   0.21134516
+I(log(GVT_EDUCATION_PC) * log(GVT_TRANSPORT_PC))               0.20365257
+I(log(GVT_ENERGY_PC) * log(GVT_ENV_PROTECTION_PC))             0.00825928
+I(log(GVT_ENERGY_PC) * log(GVT_HEALTH_PC))                     0.03601262
+I(log(GVT_ENERGY_PC) * log(GVT_HOUSING_AMEN_PC))               0.01350110
+I(log(GVT_ENERGY_PC) * log(GVT_SOCIAL_PROTECTION_PC))          0.01929838
+I(log(GVT_ENERGY_PC) * log(GVT_OTHER_PC))                      0.02410529
+I(log(GVT_ENERGY_PC) * log(GVT_TRANSPORT_PC))                  0.01444447
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HEALTH_PC))             0.06524731
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HOUSING_AMEN_PC))       0.01993314
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_SOCIAL_PROTECTION_PC))  0.02278760
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_OTHER_PC))              0.04044686
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_TRANSPORT_PC))          0.02189767
+I(log(GVT_HEALTH_PC) * log(GVT_HOUSING_AMEN_PC))               0.09496483
+I(log(GVT_HEALTH_PC) * log(GVT_SOCIAL_PROTECTION_PC))          0.14339014
+I(log(GVT_HEALTH_PC) * log(GVT_OTHER_PC))                      0.16781447
+I(log(GVT_HEALTH_PC) * log(GVT_TRANSPORT_PC))                  0.19395804
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_SOCIAL_PROTECTION_PC))    0.04659271
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_OTHER_PC))                0.07341053
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_TRANSPORT_PC))            0.04754828
+I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_OTHER_PC))           0.08593788
+I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_TRANSPORT_PC))       0.06398969
+I(log(GVT_OTHER_PC) * log(GVT_TRANSPORT_PC))                   0.11161950
+log(CV_GDP)                                                    0.01279321
+Z_CV_CC                                                        0.00255174
+Z_CV_GE                                                        0.00275798
+Z_factor(Country_name)Afghanistan                              0.10340113
+Z_factor(Country_name)Azerbaijan                               0.24852055
+Z_factor(Country_name)Belize                                   0.12583463
+Z_factor(Country_name)Bolivia (Plurinational State of)         0.10263066
+Z_factor(Country_name)China                                    0.17736485
+Z_factor(Country_name)Costa Rica                               0.17676647
+Z_factor(Country_name)Ecuador                                  0.16532893
+Z_factor(Country_name)Egypt                                    0.14669260
+Z_factor(Country_name)El Salvador                              0.12310541
+Z_factor(Country_name)Guatemala                                0.09684151
+Z_factor(Country_name)Honduras                                 0.12465689
+Z_factor(Country_name)Jamaica                                  0.16458234
+Z_factor(Country_name)Kuwait                                   0.22750359
+Z_factor(Country_name)Kyrgyzstan                               0.29211071
+Z_factor(Country_name)Mexico                                   0.15782973
+Z_factor(Country_name)Myanmar                                  0.11784426
+Z_factor(Country_name)Nepal                                    0.12558019
+Z_factor(Country_name)Panama                                   0.18009948
+Z_factor(Country_name)Singapore                                0.27541709
+Z_factor(Country_name)South Africa                             0.18276452
+Z_factor(Country_name)Thailand                                 0.17525267
+Z_factor(Country_name)Türkiye                                  0.15251881
+Z_factor(Country_name)Uruguay                                  0.20869947
+sigmaSq                                                        0.00186671
+gamma                                                          0.00178050
                                                                z value
-(Intercept)                                                    15.5729
-log(GVT_AGRI_FORESTRY_PC)                                       2.8797
-log(GVT_COMMUNICATION_PC)                                       4.9301
-log(GVT_ECON_AFFAIRS_PC)                                       -3.2352
-log(GVT_EDUCATION_PC)                                          -3.6658
-log(GVT_ENERGY_PC)                                              1.6245
-log(GVT_ENV_PROTECTION_PC)                                      2.0721
-log(GVT_HEALTH_PC)                                              2.7968
-log(GVT_HOUSING_AMEN_PC)                                        0.4514
-log(GVT_SOCIAL_PROTECTION_PC)                                  -0.0891
-log(GVT_TRANSPORT_PC)                                          -0.1406
-I(log(GVT_AGRI_FORESTRY_PC)^2)                                 -0.9465
-I(log(GVT_COMMUNICATION_PC)^2)                                  0.2021
-I(log(GVT_ECON_AFFAIRS_PC)^2)                                   1.0293
-I(log(GVT_EDUCATION_PC)^2)                                      0.6227
-I(log(GVT_ENERGY_PC)^2)                                         1.0771
-I(log(GVT_ENV_PROTECTION_PC)^2)                                 2.5036
-I(log(GVT_HEALTH_PC)^2)                                         0.1696
-I(log(GVT_HOUSING_AMEN_PC)^2)                                   2.3841
-I(log(GVT_SOCIAL_PROTECTION_PC)^2)                             -2.6904
-I(log(GVT_TRANSPORT_PC)^2)                                     -2.7027
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_COMMUNICATION_PC))        1.2338
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ECON_AFFAIRS_PC))        -1.1491
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_EDUCATION_PC))           -3.0028
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENERGY_PC))               1.4307
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENV_PROTECTION_PC))      -3.1526
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HEALTH_PC))               1.1649
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HOUSING_AMEN_PC))         2.0870
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_SOCIAL_PROTECTION_PC))    1.2431
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_TRANSPORT_PC))            3.5824
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ECON_AFFAIRS_PC))        -0.8427
-I(log(GVT_COMMUNICATION_PC) * log(GVT_EDUCATION_PC))           -3.6954
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ENERGY_PC))              -0.5658
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ENV_PROTECTION_PC))       1.3942
-I(log(GVT_COMMUNICATION_PC) * log(GVT_HEALTH_PC))               0.4671
-I(log(GVT_COMMUNICATION_PC) * log(GVT_HOUSING_AMEN_PC))        -1.5896
-I(log(GVT_COMMUNICATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))    2.8939
-I(log(GVT_COMMUNICATION_PC) * log(GVT_TRANSPORT_PC))           -0.4049
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_EDUCATION_PC))             4.8785
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENERGY_PC))               -2.0417
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENV_PROTECTION_PC))       -1.4994
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HEALTH_PC))               -2.9051
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HOUSING_AMEN_PC))         -0.4612
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_SOCIAL_PROTECTION_PC))    -3.5130
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_TRANSPORT_PC))            -1.4419
-I(log(GVT_EDUCATION_PC) * log(GVT_ENERGY_PC))                  -0.0011
-I(log(GVT_EDUCATION_PC) * log(GVT_ENV_PROTECTION_PC))           2.5194
-I(log(GVT_EDUCATION_PC) * log(GVT_HEALTH_PC))                  -1.1061
-I(log(GVT_EDUCATION_PC) * log(GVT_HOUSING_AMEN_PC))            -5.4276
-I(log(GVT_EDUCATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))        1.3926
-I(log(GVT_EDUCATION_PC) * log(GVT_TRANSPORT_PC))               -0.8049
-I(log(GVT_ENERGY_PC) * log(GVT_ENV_PROTECTION_PC))              2.8539
-I(log(GVT_ENERGY_PC) * log(GVT_HEALTH_PC))                     -0.9686
-I(log(GVT_ENERGY_PC) * log(GVT_HOUSING_AMEN_PC))               -0.8151
-I(log(GVT_ENERGY_PC) * log(GVT_SOCIAL_PROTECTION_PC))           0.9280
-I(log(GVT_ENERGY_PC) * log(GVT_TRANSPORT_PC))                   1.9833
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HEALTH_PC))             -2.0133
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HOUSING_AMEN_PC))       -2.6841
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_SOCIAL_PROTECTION_PC))  -0.2053
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_TRANSPORT_PC))           0.3221
-I(log(GVT_HEALTH_PC) * log(GVT_HOUSING_AMEN_PC))                3.5278
-I(log(GVT_HEALTH_PC) * log(GVT_SOCIAL_PROTECTION_PC))           0.0833
-I(log(GVT_HEALTH_PC) * log(GVT_TRANSPORT_PC))                   0.8685
-I(log(GVT_HOUSING_AMEN_PC) * log(GVT_SOCIAL_PROTECTION_PC))     0.8331
-I(log(GVT_HOUSING_AMEN_PC) * log(GVT_TRANSPORT_PC))             2.6967
-I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_TRANSPORT_PC))        1.7856
-log(CV_GDP)                                                   -10.6658
-Z_CV_CC                                                        -1.3846
-Z_CV_GE                                                        -2.0705
-Z_factor(Country_name)Afghanistan                              -0.4411
-Z_factor(Country_name)Azerbaijan                                0.9052
-Z_factor(Country_name)Belize                                   -0.3289
-Z_factor(Country_name)Bolivia (Plurinational State of)         -0.6022
-Z_factor(Country_name)China                                     3.8425
-Z_factor(Country_name)Costa Rica                                3.3415
-Z_factor(Country_name)Ecuador                                   6.8121
-Z_factor(Country_name)Egypt                                     8.8266
-Z_factor(Country_name)El Salvador                               1.6718
-Z_factor(Country_name)Guatemala                                10.5975
-Z_factor(Country_name)Honduras                                  6.9846
-Z_factor(Country_name)Jamaica                                   1.2187
-Z_factor(Country_name)Kuwait                                    1.2902
-Z_factor(Country_name)Kyrgyzstan                               -4.3775
-Z_factor(Country_name)Mexico                                   -2.2282
-Z_factor(Country_name)Myanmar                                  -2.0632
-Z_factor(Country_name)Nepal                                    -0.0014
-Z_factor(Country_name)Panama                                   -7.7256
-Z_factor(Country_name)Singapore                                 2.5863
-Z_factor(Country_name)South Africa                              6.8433
-Z_factor(Country_name)Thailand                                  1.5608
-Z_factor(Country_name)Türkiye                                  -0.7612
-Z_factor(Country_name)Uruguay                                   3.4000
-sigmaSq                                                         8.8622
-gamma                                                           0.0297
+(Intercept)                                                     1.8540
+log(GVT_AGRI_FORESTRY_PC)                                       1.3202
+log(GVT_COMMUNICATION_PC)                                       5.1620
+log(GVT_ECON_AFFAIRS_PC)                                       -0.1673
+log(GVT_EDUCATION_PC)                                           1.8501
+log(GVT_ENERGY_PC)                                             -1.2063
+log(GVT_ENV_PROTECTION_PC)                                     -0.6579
+log(GVT_HEALTH_PC)                                             -4.8267
+log(GVT_HOUSING_AMEN_PC)                                        3.9654
+log(GVT_SOCIAL_PROTECTION_PC)                                  -1.0342
+log(GVT_OTHER_PC)                                               5.4502
+log(GVT_TRANSPORT_PC)                                          -3.3455
+I(log(GVT_AGRI_FORESTRY_PC)^2)                                 -5.2209
+I(log(GVT_COMMUNICATION_PC)^2)                                  1.8975
+I(log(GVT_ECON_AFFAIRS_PC)^2)                                  -1.6930
+I(log(GVT_EDUCATION_PC)^2)                                     -1.4973
+I(log(GVT_ENERGY_PC)^2)                                         6.6899
+I(log(GVT_ENV_PROTECTION_PC)^2)                                 2.2297
+I(log(GVT_HEALTH_PC)^2)                                        -2.9456
+I(log(GVT_HOUSING_AMEN_PC)^2)                                   4.1377
+I(log(GVT_SOCIAL_PROTECTION_PC)^2)                             -1.5613
+I(log(GVT_OTHER_PC)^2)                                         -4.8775
+I(log(GVT_TRANSPORT_PC)^2)                                     -0.1851
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_COMMUNICATION_PC))        3.8431
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ECON_AFFAIRS_PC))         2.6399
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_EDUCATION_PC))            1.9910
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENERGY_PC))               1.7338
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENV_PROTECTION_PC))      -1.0525
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HEALTH_PC))              -2.2853
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HOUSING_AMEN_PC))         1.9142
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_SOCIAL_PROTECTION_PC))    1.5874
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_OTHER_PC))               -1.5669
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_TRANSPORT_PC))           -0.0452
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ECON_AFFAIRS_PC))        -2.7907
+I(log(GVT_COMMUNICATION_PC) * log(GVT_EDUCATION_PC))           -3.9052
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ENERGY_PC))               2.8916
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ENV_PROTECTION_PC))       2.1750
+I(log(GVT_COMMUNICATION_PC) * log(GVT_HEALTH_PC))               2.3577
+I(log(GVT_COMMUNICATION_PC) * log(GVT_HOUSING_AMEN_PC))         0.3049
+I(log(GVT_COMMUNICATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))    0.7233
+I(log(GVT_COMMUNICATION_PC) * log(GVT_OTHER_PC))                1.2298
+I(log(GVT_COMMUNICATION_PC) * log(GVT_TRANSPORT_PC))           -4.6390
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_EDUCATION_PC))            -0.1115
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENERGY_PC))               -5.5353
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENV_PROTECTION_PC))       -5.3321
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HEALTH_PC))                0.7108
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HOUSING_AMEN_PC))         -1.7681
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_SOCIAL_PROTECTION_PC))    -1.9889
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_OTHER_PC))                 0.9926
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_TRANSPORT_PC))             1.5129
+I(log(GVT_EDUCATION_PC) * log(GVT_ENERGY_PC))                   4.7835
+I(log(GVT_EDUCATION_PC) * log(GVT_ENV_PROTECTION_PC))           1.1782
+I(log(GVT_EDUCATION_PC) * log(GVT_HEALTH_PC))                   2.5059
+I(log(GVT_EDUCATION_PC) * log(GVT_HOUSING_AMEN_PC))            -5.2880
+I(log(GVT_EDUCATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))        0.8847
+I(log(GVT_EDUCATION_PC) * log(GVT_OTHER_PC))                   -0.5380
+I(log(GVT_EDUCATION_PC) * log(GVT_TRANSPORT_PC))               -0.4116
+I(log(GVT_ENERGY_PC) * log(GVT_ENV_PROTECTION_PC))              3.0529
+I(log(GVT_ENERGY_PC) * log(GVT_HEALTH_PC))                     -2.6069
+I(log(GVT_ENERGY_PC) * log(GVT_HOUSING_AMEN_PC))               -5.3212
+I(log(GVT_ENERGY_PC) * log(GVT_SOCIAL_PROTECTION_PC))           1.7492
+I(log(GVT_ENERGY_PC) * log(GVT_OTHER_PC))                      -0.6919
+I(log(GVT_ENERGY_PC) * log(GVT_TRANSPORT_PC))                   0.0438
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HEALTH_PC))             -1.9671
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HOUSING_AMEN_PC))        1.4118
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_SOCIAL_PROTECTION_PC))   1.3841
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_OTHER_PC))               2.3968
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_TRANSPORT_PC))           2.3003
+I(log(GVT_HEALTH_PC) * log(GVT_HOUSING_AMEN_PC))                3.2754
+I(log(GVT_HEALTH_PC) * log(GVT_SOCIAL_PROTECTION_PC))           0.1133
+I(log(GVT_HEALTH_PC) * log(GVT_OTHER_PC))                       2.4034
+I(log(GVT_HEALTH_PC) * log(GVT_TRANSPORT_PC))                   0.2831
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_SOCIAL_PROTECTION_PC))    -0.9667
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_OTHER_PC))                 1.1453
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_TRANSPORT_PC))            -1.3735
+I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_OTHER_PC))            0.9719
+I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_TRANSPORT_PC))       -0.5127
+I(log(GVT_OTHER_PC) * log(GVT_TRANSPORT_PC))                    2.1575
+log(CV_GDP)                                                   -10.0924
+Z_CV_CC                                                         4.4659
+Z_CV_GE                                                        -1.2075
+Z_factor(Country_name)Afghanistan                              10.7626
+Z_factor(Country_name)Azerbaijan                                0.0347
+Z_factor(Country_name)Belize                                   -2.8491
+Z_factor(Country_name)Bolivia (Plurinational State of)          1.7707
+Z_factor(Country_name)China                                    -1.1769
+Z_factor(Country_name)Costa Rica                               -4.7915
+Z_factor(Country_name)Ecuador                                  -0.4809
+Z_factor(Country_name)Egypt                                     2.2422
+Z_factor(Country_name)El Salvador                               0.7556
+Z_factor(Country_name)Guatemala                                10.0821
+Z_factor(Country_name)Honduras                                  6.2352
+Z_factor(Country_name)Jamaica                                  -1.5321
+Z_factor(Country_name)Kuwait                                    0.1783
+Z_factor(Country_name)Kyrgyzstan                                0.1264
+Z_factor(Country_name)Mexico                                   -2.2578
+Z_factor(Country_name)Myanmar                                  -8.6225
+Z_factor(Country_name)Nepal                                    -0.0720
+Z_factor(Country_name)Panama                                   -0.3246
+Z_factor(Country_name)Singapore                                -2.1784
+Z_factor(Country_name)South Africa                              1.5274
+Z_factor(Country_name)Thailand                                 -2.4077
+Z_factor(Country_name)Türkiye                                   0.3883
+Z_factor(Country_name)Uruguay                                  -2.8104
+sigmaSq                                                        19.7402
+gamma                                                         561.5930
                                                                Pr(>|z|)    
-(Intercept)                                                   < 2.2e-16 ***
-log(GVT_AGRI_FORESTRY_PC)                                     0.0039802 ** 
-log(GVT_COMMUNICATION_PC)                                     8.218e-07 ***
-log(GVT_ECON_AFFAIRS_PC)                                      0.0012157 ** 
-log(GVT_EDUCATION_PC)                                         0.0002465 ***
-log(GVT_ENERGY_PC)                                            0.1042713    
-log(GVT_ENV_PROTECTION_PC)                                    0.0382578 *  
-log(GVT_HEALTH_PC)                                            0.0051618 ** 
-log(GVT_HOUSING_AMEN_PC)                                      0.6517014    
-log(GVT_SOCIAL_PROTECTION_PC)                                 0.9289946    
-log(GVT_TRANSPORT_PC)                                         0.8882079    
-I(log(GVT_AGRI_FORESTRY_PC)^2)                                0.3438966    
-I(log(GVT_COMMUNICATION_PC)^2)                                0.8398235    
-I(log(GVT_ECON_AFFAIRS_PC)^2)                                 0.3033551    
-I(log(GVT_EDUCATION_PC)^2)                                    0.5334760    
-I(log(GVT_ENERGY_PC)^2)                                       0.2814412    
-I(log(GVT_ENV_PROTECTION_PC)^2)                               0.0122946 *  
-I(log(GVT_HEALTH_PC)^2)                                       0.8653362    
-I(log(GVT_HOUSING_AMEN_PC)^2)                                 0.0171232 *  
-I(log(GVT_SOCIAL_PROTECTION_PC)^2)                            0.0071358 ** 
-I(log(GVT_TRANSPORT_PC)^2)                                    0.0068782 ** 
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_COMMUNICATION_PC))      0.2172602    
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ECON_AFFAIRS_PC))       0.2504975    
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_EDUCATION_PC))          0.0026755 ** 
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENERGY_PC))             0.1525037    
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENV_PROTECTION_PC))     0.0016181 ** 
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HEALTH_PC))             0.2440715    
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HOUSING_AMEN_PC))       0.0368890 *  
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_SOCIAL_PROTECTION_PC))  0.2138277    
-I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_TRANSPORT_PC))          0.0003405 ***
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ECON_AFFAIRS_PC))       0.3993955    
-I(log(GVT_COMMUNICATION_PC) * log(GVT_EDUCATION_PC))          0.0002195 ***
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ENERGY_PC))             0.5715422    
-I(log(GVT_COMMUNICATION_PC) * log(GVT_ENV_PROTECTION_PC))     0.1632439    
-I(log(GVT_COMMUNICATION_PC) * log(GVT_HEALTH_PC))             0.6404513    
-I(log(GVT_COMMUNICATION_PC) * log(GVT_HOUSING_AMEN_PC))       0.1119277    
-I(log(GVT_COMMUNICATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))  0.0038045 ** 
-I(log(GVT_COMMUNICATION_PC) * log(GVT_TRANSPORT_PC))          0.6855304    
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_EDUCATION_PC))           1.069e-06 ***
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENERGY_PC))              0.0411831 *  
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENV_PROTECTION_PC))      0.1337647    
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HEALTH_PC))              0.0036716 ** 
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HOUSING_AMEN_PC))        0.6446249    
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_SOCIAL_PROTECTION_PC))   0.0004432 ***
-I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_TRANSPORT_PC))           0.1493433    
-I(log(GVT_EDUCATION_PC) * log(GVT_ENERGY_PC))                 0.9991260    
-I(log(GVT_EDUCATION_PC) * log(GVT_ENV_PROTECTION_PC))         0.0117570 *  
-I(log(GVT_EDUCATION_PC) * log(GVT_HEALTH_PC))                 0.2686835    
-I(log(GVT_EDUCATION_PC) * log(GVT_HOUSING_AMEN_PC))           5.712e-08 ***
-I(log(GVT_EDUCATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))      0.1637457    
-I(log(GVT_EDUCATION_PC) * log(GVT_TRANSPORT_PC))              0.4208797    
-I(log(GVT_ENERGY_PC) * log(GVT_ENV_PROTECTION_PC))            0.0043189 ** 
-I(log(GVT_ENERGY_PC) * log(GVT_HEALTH_PC))                    0.3327667    
-I(log(GVT_ENERGY_PC) * log(GVT_HOUSING_AMEN_PC))              0.4149896    
-I(log(GVT_ENERGY_PC) * log(GVT_SOCIAL_PROTECTION_PC))         0.3534006    
-I(log(GVT_ENERGY_PC) * log(GVT_TRANSPORT_PC))                 0.0473385 *  
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HEALTH_PC))            0.0440779 *  
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HOUSING_AMEN_PC))      0.0072724 ** 
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_SOCIAL_PROTECTION_PC)) 0.8373301    
-I(log(GVT_ENV_PROTECTION_PC) * log(GVT_TRANSPORT_PC))         0.7473844    
-I(log(GVT_HEALTH_PC) * log(GVT_HOUSING_AMEN_PC))              0.0004190 ***
-I(log(GVT_HEALTH_PC) * log(GVT_SOCIAL_PROTECTION_PC))         0.9336326    
-I(log(GVT_HEALTH_PC) * log(GVT_TRANSPORT_PC))                 0.3851446    
-I(log(GVT_HOUSING_AMEN_PC) * log(GVT_SOCIAL_PROTECTION_PC))   0.4047974    
-I(log(GVT_HOUSING_AMEN_PC) * log(GVT_TRANSPORT_PC))           0.0070034 ** 
-I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_TRANSPORT_PC))      0.0741591 .  
+(Intercept)                                                   0.0637393 .  
+log(GVT_AGRI_FORESTRY_PC)                                     0.1867754    
+log(GVT_COMMUNICATION_PC)                                     2.443e-07 ***
+log(GVT_ECON_AFFAIRS_PC)                                      0.8671709    
+log(GVT_EDUCATION_PC)                                         0.0642996 .  
+log(GVT_ENERGY_PC)                                            0.2276989    
+log(GVT_ENV_PROTECTION_PC)                                    0.5106200    
+log(GVT_HEALTH_PC)                                            1.388e-06 ***
+log(GVT_HOUSING_AMEN_PC)                                      7.327e-05 ***
+log(GVT_SOCIAL_PROTECTION_PC)                                 0.3010431    
+log(GVT_OTHER_PC)                                             5.031e-08 ***
+log(GVT_TRANSPORT_PC)                                         0.0008213 ***
+I(log(GVT_AGRI_FORESTRY_PC)^2)                                1.780e-07 ***
+I(log(GVT_COMMUNICATION_PC)^2)                                0.0577563 .  
+I(log(GVT_ECON_AFFAIRS_PC)^2)                                 0.0904579 .  
+I(log(GVT_EDUCATION_PC)^2)                                    0.1343168    
+I(log(GVT_ENERGY_PC)^2)                                       2.233e-11 ***
+I(log(GVT_ENV_PROTECTION_PC)^2)                               0.0257650 *  
+I(log(GVT_HEALTH_PC)^2)                                       0.0032229 ** 
+I(log(GVT_HOUSING_AMEN_PC)^2)                                 3.508e-05 ***
+I(log(GVT_SOCIAL_PROTECTION_PC)^2)                            0.1184477    
+I(log(GVT_OTHER_PC)^2)                                        1.074e-06 ***
+I(log(GVT_TRANSPORT_PC)^2)                                    0.8531768    
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_COMMUNICATION_PC))      0.0001215 ***
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ECON_AFFAIRS_PC))       0.0082918 ** 
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_EDUCATION_PC))          0.0464765 *  
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENERGY_PC))             0.0829509 .  
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_ENV_PROTECTION_PC))     0.2925740    
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HEALTH_PC))             0.0222930 *  
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_HOUSING_AMEN_PC))       0.0555956 .  
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_SOCIAL_PROTECTION_PC))  0.1124224    
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_OTHER_PC))              0.1171397    
+I(log(GVT_AGRI_FORESTRY_PC) * log(GVT_TRANSPORT_PC))          0.9639455    
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ECON_AFFAIRS_PC))       0.0052592 ** 
+I(log(GVT_COMMUNICATION_PC) * log(GVT_EDUCATION_PC))          9.415e-05 ***
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ENERGY_PC))             0.0038327 ** 
+I(log(GVT_COMMUNICATION_PC) * log(GVT_ENV_PROTECTION_PC))     0.0296330 *  
+I(log(GVT_COMMUNICATION_PC) * log(GVT_HEALTH_PC))             0.0183882 *  
+I(log(GVT_COMMUNICATION_PC) * log(GVT_HOUSING_AMEN_PC))       0.7604138    
+I(log(GVT_COMMUNICATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))  0.4695118    
+I(log(GVT_COMMUNICATION_PC) * log(GVT_OTHER_PC))              0.2187842    
+I(log(GVT_COMMUNICATION_PC) * log(GVT_TRANSPORT_PC))          3.501e-06 ***
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_EDUCATION_PC))           0.9112417    
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENERGY_PC))              3.106e-08 ***
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_ENV_PROTECTION_PC))      9.710e-08 ***
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HEALTH_PC))              0.4772055    
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_HOUSING_AMEN_PC))        0.0770522 .  
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_SOCIAL_PROTECTION_PC))   0.0467089 *  
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_OTHER_PC))               0.3208853    
+I(log(GVT_ECON_AFFAIRS_PC) * log(GVT_TRANSPORT_PC))           0.1302948    
+I(log(GVT_EDUCATION_PC) * log(GVT_ENERGY_PC))                 1.723e-06 ***
+I(log(GVT_EDUCATION_PC) * log(GVT_ENV_PROTECTION_PC))         0.2387299    
+I(log(GVT_EDUCATION_PC) * log(GVT_HEALTH_PC))                 0.0122123 *  
+I(log(GVT_EDUCATION_PC) * log(GVT_HOUSING_AMEN_PC))           1.237e-07 ***
+I(log(GVT_EDUCATION_PC) * log(GVT_SOCIAL_PROTECTION_PC))      0.3763045    
+I(log(GVT_EDUCATION_PC) * log(GVT_OTHER_PC))                  0.5905728    
+I(log(GVT_EDUCATION_PC) * log(GVT_TRANSPORT_PC))              0.6806634    
+I(log(GVT_ENERGY_PC) * log(GVT_ENV_PROTECTION_PC))            0.0022667 ** 
+I(log(GVT_ENERGY_PC) * log(GVT_HEALTH_PC))                    0.0091373 ** 
+I(log(GVT_ENERGY_PC) * log(GVT_HOUSING_AMEN_PC))              1.031e-07 ***
+I(log(GVT_ENERGY_PC) * log(GVT_SOCIAL_PROTECTION_PC))         0.0802604 .  
+I(log(GVT_ENERGY_PC) * log(GVT_OTHER_PC))                     0.4890210    
+I(log(GVT_ENERGY_PC) * log(GVT_TRANSPORT_PC))                 0.9650930    
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HEALTH_PC))            0.0491741 *  
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_HOUSING_AMEN_PC))      0.1580173    
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_SOCIAL_PROTECTION_PC)) 0.1663155    
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_OTHER_PC))             0.0165372 *  
+I(log(GVT_ENV_PROTECTION_PC) * log(GVT_TRANSPORT_PC))         0.0214320 *  
+I(log(GVT_HEALTH_PC) * log(GVT_HOUSING_AMEN_PC))              0.0010552 ** 
+I(log(GVT_HEALTH_PC) * log(GVT_SOCIAL_PROTECTION_PC))         0.9097597    
+I(log(GVT_HEALTH_PC) * log(GVT_OTHER_PC))                     0.0162432 *  
+I(log(GVT_HEALTH_PC) * log(GVT_TRANSPORT_PC))                 0.7771158    
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_SOCIAL_PROTECTION_PC))   0.3337038    
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_OTHER_PC))               0.2520939    
+I(log(GVT_HOUSING_AMEN_PC) * log(GVT_TRANSPORT_PC))           0.1695864    
+I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_OTHER_PC))          0.3311057    
+I(log(GVT_SOCIAL_PROTECTION_PC) * log(GVT_TRANSPORT_PC))      0.6081276    
+I(log(GVT_OTHER_PC) * log(GVT_TRANSPORT_PC))                  0.0309692 *  
 log(CV_GDP)                                                   < 2.2e-16 ***
-Z_CV_CC                                                       0.1661872    
-Z_CV_GE                                                       0.0384062 *  
-Z_factor(Country_name)Afghanistan                             0.6591247    
-Z_factor(Country_name)Azerbaijan                              0.3653502    
-Z_factor(Country_name)Belize                                  0.7422221    
-Z_factor(Country_name)Bolivia (Plurinational State of)        0.5470146    
-Z_factor(Country_name)China                                   0.0001218 ***
-Z_factor(Country_name)Costa Rica                              0.0008333 ***
-Z_factor(Country_name)Ecuador                                 9.619e-12 ***
-Z_factor(Country_name)Egypt                                   < 2.2e-16 ***
-Z_factor(Country_name)El Salvador                             0.0945669 .  
+Z_CV_CC                                                       7.975e-06 ***
+Z_CV_GE                                                       0.2272455    
+Z_factor(Country_name)Afghanistan                             < 2.2e-16 ***
+Z_factor(Country_name)Azerbaijan                              0.9722867    
+Z_factor(Country_name)Belize                                  0.0043849 ** 
+Z_factor(Country_name)Bolivia (Plurinational State of)        0.0766054 .  
+Z_factor(Country_name)China                                   0.2392492    
+Z_factor(Country_name)Costa Rica                              1.655e-06 ***
+Z_factor(Country_name)Ecuador                                 0.6305937    
+Z_factor(Country_name)Egypt                                   0.0249491 *  
+Z_factor(Country_name)El Salvador                             0.4499115    
 Z_factor(Country_name)Guatemala                               < 2.2e-16 ***
-Z_factor(Country_name)Honduras                                2.857e-12 ***
-Z_factor(Country_name)Jamaica                                 0.2229706    
-Z_factor(Country_name)Kuwait                                  0.1969784    
-Z_factor(Country_name)Kyrgyzstan                              1.201e-05 ***
-Z_factor(Country_name)Mexico                                  0.0258660 *  
-Z_factor(Country_name)Myanmar                                 0.0390909 *  
-Z_factor(Country_name)Nepal                                   0.9988624    
-Z_factor(Country_name)Panama                                  1.113e-14 ***
-Z_factor(Country_name)Singapore                               0.0097008 ** 
-Z_factor(Country_name)South Africa                            7.739e-12 ***
-Z_factor(Country_name)Thailand                                0.1185691    
-Z_factor(Country_name)Türkiye                                 0.4465087    
-Z_factor(Country_name)Uruguay                                 0.0006738 ***
+Z_factor(Country_name)Honduras                                4.512e-10 ***
+Z_factor(Country_name)Jamaica                                 0.1255097    
+Z_factor(Country_name)Kuwait                                  0.8585107    
+Z_factor(Country_name)Kyrgyzstan                              0.8993818    
+Z_factor(Country_name)Mexico                                  0.0239602 *  
+Z_factor(Country_name)Myanmar                                 < 2.2e-16 ***
+Z_factor(Country_name)Nepal                                   0.9425976    
+Z_factor(Country_name)Panama                                  0.7454497    
+Z_factor(Country_name)Singapore                               0.0293774 *  
+Z_factor(Country_name)South Africa                            0.1266502    
+Z_factor(Country_name)Thailand                                0.0160552 *  
+Z_factor(Country_name)Türkiye                                 0.6977669    
+Z_factor(Country_name)Uruguay                                 0.0049481 ** 
 sigmaSq                                                       < 2.2e-16 ***
-gamma                                                         0.9763013    
+gamma                                                         < 2.2e-16 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-log likelihood value: 241.2022 
+log likelihood value: 345.3019 
 
 panel data
 number of cross-sections = 23 
@@ -398,12 +446,12 @@ thus there are 67 observations not in the panel
 
 mean efficiency of each year
      2000      2001      2002      2003      2004      2005      2006      2007 
-0.8576299 0.8566667 0.8557006 0.8525989 0.8455933 0.8555997 0.8552259 0.8609454 
+0.6431023 0.6620188 0.6577109 0.6475167 0.6731814 0.6764469 0.6699970 0.7003749 
      2008      2009      2010      2011      2012      2013      2014      2015 
-0.8627407 0.8399780 0.8389114 0.8410737 0.8362475 0.8452751 0.8476949 0.8555134 
+0.6701632 0.6529724 0.6912664 0.6824667 0.6969664 0.7008588 0.7329888 0.7017544 
      2016      2017      2018      2019      2020      2021      2022      2023 
-0.8507431 0.8614665 0.8652030 0.8600292 0.8503940 0.8538505 0.8505213 0.8532219 
+0.7419870 0.7354008 0.7593222 0.7753205 0.7915358 0.7860530 0.7770001 0.7861237 
      2024 
-0.8516555 
+0.7761163 
 
-mean efficiency: 0.8522488 
+mean efficiency: 0.7148526 

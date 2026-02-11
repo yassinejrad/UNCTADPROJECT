@@ -52,9 +52,44 @@ This repository contains a **local Streamlit application** for calibrating **Sto
 ### Python
 - Python **≥ 3.9** (recommended: 3.10)
 
+## 🔗 Download Python
+
+Official website:\
+https://www.python.org/downloads/
+
 ```bash
 python --version
 ```
+
+## 🔹 (Recommended) Create a Virtual Environment
+
+Creating a virtual environment prevents dependency conflicts.
+
+``` bash
+python -m venv venv
+```
+
+Activate it:
+
+### Windows
+
+``` bash
+venv\Scripts\activate
+```
+
+### Mac/Linux
+
+``` bash
+source venv/bin/activate
+```
+
+Upgrade pip:
+
+``` bash
+python -m pip install --upgrade pip
+```
+
+------------------------------------------------------------------------
 
 ### R
 - R **≥ 4.2**
@@ -62,6 +97,11 @@ python --version
 ```bash
 R --version
 ```
+## 🔗 Download R (CRAN)
+
+https://cran.r-project.org/
+
+Select your operating system and install R.
 
 ### Rscript
 Must be accessible from the command line:
@@ -70,11 +110,16 @@ Must be accessible from the command line:
 Rscript --version
 ```
 
-If not, edit `config.py`:
+If `Rscript` is not recognized in the command line, you must manually specify its full path in the `config.py` file.
 
 ```python
 RSCRIPT_EXECUTABLE = "C:/Program Files/R/R-4.3.2/bin/Rscript.exe"
 ```
+⚠️ Important
+
+You MUST replace this path with the exact path where R is installed on your machine.
+
+The version number and folder may be different on your system.
 
 ---
 
@@ -128,6 +173,44 @@ python -m streamlit run Step_1_Upload_Data.py
 
 ---
 
+------------------------------------------------------------------------
+
+# ⚠️ VERY IMPORTANT --- Calibration & Optimization Workflow
+
+## 📂 Optimization Uses the `Data/coef/` Folder
+
+The optimization step automatically reads **ALL coefficient files**
+located in:
+
+    Data/coef/
+
+These files are generated during the **SFA calibration step**.
+
+------------------------------------------------------------------------
+
+## 🚨 Critical Rule Before Running a New Calibration
+
+Before performing a new calibration:
+
+### ➜ You MUST manually delete all existing files inside:
+
+    Data/coef/
+
+------------------------------------------------------------------------
+
+## ❗ Why Is This Important?
+
+If old coefficient files remain:
+
+-   The optimization will read **all files present**
+-   Old and new parameters may be mixed
+-   Results may become inconsistent
+
+This can produce incorrect optimization outputs.
+
+------------------------------------------------------------------------
+
+
 ## 📊 How to Read the Charts
 
 ### 📈 Total Expenditure (All Years)
@@ -158,7 +241,7 @@ Data/
 ├── coef/
 ├── summary/
 ├── descriptive/
-├── optimized_output.csv
+├── optimization_results/
 ```
 
 ---
